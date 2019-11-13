@@ -9,8 +9,15 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="常用命令1234567891011npm install -g hexo-cli // 安装hexo npm init 文件夹名称 // 搭建网站npm install // 安装依赖hexo ne,"> 
+    <meta name="keywords" content="ZuPerfect 朱鹏飞,"> 
+    <meta name="description" content="hexo博客搭建流程
+1、准备
+安装git
+安装nodeJs
+
+2、搭建流程
+安装hexo1npm install -g hexo-cli
+搭建网站12345hexo init dirNamecd ,"> 
     <meta name="author" content="John Doe"> 
     <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -58,15 +65,33 @@
         <div class="stuff">
             <span>十一月 09, 2019</span>
             
-  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/categories/" rel="tag">categories</a></li></ul>
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%A4%87%E5%BF%98/" rel="tag">备忘</a></li></ul>
 
 
         </div>
         <div class="content markdown">
-            <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli <span class="comment">// 安装hexo </span></span><br><span class="line"></span><br><span class="line">npm init 文件夹名称 <span class="comment">// 搭建网站</span></span><br><span class="line"></span><br><span class="line">npm install <span class="comment">// 安装依赖</span></span><br><span class="line"></span><br><span class="line">hexo <span class="keyword">new</span> blogName <span class="comment">// 创建新文章</span></span><br><span class="line"></span><br><span class="line">hexo g <span class="comment">// 生成静态页面至public目录</span></span><br><span class="line"></span><br><span class="line">hexo d <span class="comment">// 自动部署到GitHub</span></span><br></pre></td></tr></table></figure>
+            <h2 id="hexo博客搭建流程"><a href="#hexo博客搭建流程" class="headerlink" title="hexo博客搭建流程"></a>hexo博客搭建流程</h2><hr>
+<h3 id="1、准备"><a href="#1、准备" class="headerlink" title="1、准备"></a>1、准备</h3><ul>
+<li>安装git</li>
+<li>安装nodeJs</li>
+</ul>
+<h3 id="2、搭建流程"><a href="#2、搭建流程" class="headerlink" title="2、搭建流程"></a>2、搭建流程</h3><ul>
+<li>安装hexo<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
+<li>搭建网站<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init dirName</span><br><span class="line"></span><br><span class="line">cd dirName</span><br><span class="line"></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+<li>生成静态页面至public目录<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></li>
+<li>启动服务<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: diaspora</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:ZuPerfect/ZuPerfect.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3、创建github仓库"><a href="#3、创建github仓库" class="headerlink" title="3、创建github仓库"></a>3、创建github仓库</h3><p>  注意：仓库名字前缀需要和Owner一致，如这里Owner为ZuPerfect，那么我的仓库名为ZuPerfect.github.io，前缀必须一致，后面就上github.io。创建成功后复制ssh。</p>
+<h3 id="4、选择主题"><a href="#4、选择主题" class="headerlink" title="4、选择主题"></a>4、选择主题</h3><p>官方主题，请戳<a href="https://hexo.io/themes/" target="_blank" rel="noopener">这里</a>，选择好自己喜欢的主题之后，定位到其源码托管在github上的托管仓库，将其克隆到themes文件夹下，我选择的是diaspora。</p>
+<h3 id="5、修改-config-yml配置文件"><a href="#5、修改-config-yml配置文件" class="headerlink" title="5、修改_config.yml配置文件"></a>5、修改_config.yml配置文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">theme: diaspora</span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:ZuPerfect/ZuPerfect.github.io.git  <span class="comment">// 第三步复制的ssh</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
+<h3 id="6、发布"><a href="#6、发布" class="headerlink" title="6、发布"></a>6、发布</h3><ul>
+<li>安装hexo-deployer-git<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>发布<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="emmmm"><a href="#emmmm" class="headerlink" title="emmmm"></a>emmmm</h3><img src="/img/end.jpg" alt="emmmm"></li>
+</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
