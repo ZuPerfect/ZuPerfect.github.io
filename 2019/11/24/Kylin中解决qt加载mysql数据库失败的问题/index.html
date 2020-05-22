@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ubuntu Kylin中解决qt加载mysql数据库失败的问题 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZuPerfect 朱鹏飞,"> 
+    <meta name="description" content="背景最近在使用qtcreate连接数据库的时候，出现了下图的错误，针对该错误，我在此给出解决方案，希望可以帮到大家。
+分析错误原因由QSqlDataBase:availbase drivers:QS,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Ubuntu Kylin中解决qt加载mysql数据库失败的问题</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Ubuntu Kylin中解决qt加载mysql数据库失败的问题</h1>
+        <div class="stuff">
+            <span>十一月 24, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>最近在使用qtcreate连接数据库的时候，出现了下图的错误，针对该错误，我在此给出解决方案，希望可以帮到大家。<br><img src="/img/qt%E8%BF%9E%E6%8E%A5mysql%E9%94%99%E8%AF%AF.png" alt="emmmm"></p>
+<h2 id="分析错误原因"><a href="#分析错误原因" class="headerlink" title="分析错误原因"></a>分析错误原因</h2><p>由<font color=red>QSqlDataBase:availbase drivers:QSQLITE QMYSQLQMYSQL3 QPSQL QPSQL7</font>这句话可以看出，没有正确的加载驱动并不是由于缺少驱动导致，因此可能是由于驱动不是最新的导致，下面验证是不是真是这样。</p>
+<p>首先使用命令cd /opt/Qt5.6.0/5.6/gcc_64/plugins/sqldrivers进到该目录下，然后使用lddlibqsqlmysql.so命令查看动态链接库的依赖关系，终端给出如下反馈：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">linux-vdso.so.1 =&gt;  (0x00007fff809fe000)</span><br><span class="line">	libmysqlclient_r.so.16 =&gt; not found // 注意这句！！</span><br><span class="line">	libz.so.1 =&gt; /lib/x86_64-linux-gnu/libz.so.1 (0x00007fadbfc3f000)</span><br><span class="line">	libcrypt.so.1 =&gt; /lib/x86_64-linux-gnu/libcrypt.so.1 (0x00007fadbfa06000)</span><br><span class="line">	libnsl.so.1 =&gt; /lib/x86_64-linux-gnu/libnsl.so.1 (0x00007fadbf7ec000)</span><br><span class="line">	libssl.so.10 =&gt; not found</span><br><span class="line">	libcrypto.so.10 =&gt; not found</span><br><span class="line">	libQt5Sql.so.5 =&gt; /opt/Qt5.6.0/5.6/gcc_64/plugins/sqldrivers/./../../lib/libQt5Sql.so.5 </span><br><span class="line">(0x00007fadbf5a7000)</span><br><span class="line">	libQt5Core.so.5 =&gt; /opt/Qt5.6.0/5.6/gcc_64/plugins/sqldrivers/./../../lib/libQt5Core.so.5 </span><br><span class="line">(0x00007fadbee94000)</span><br><span class="line">	libpthread.so.0 =&gt; /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007fadbec76000)</span><br><span class="line">	libstdc++.so.6 =&gt; /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fadbe972000)</span><br><span class="line">	libm.so.6 =&gt; /lib/x86_64-linux-gnu/libm.so.6 (0x00007fadbe66b000)</span><br><span class="line">	libgcc_s.so.1 =&gt; /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fadbe455000)</span><br><span class="line">	libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00007fadbe08f000)</span><br><span class="line">	libicui18n.so.56 =&gt; /opt/Qt5.6.0/5.6/gcc_64/plugins/sqldrivers/./../../lib/libicui18n.so.56 </span><br><span class="line">(0x00007fadbdbf4000)</span><br><span class="line">	libicuuc.so.56 =&gt; /opt/Qt5.6.0/5.6/gcc_64/plugins/sqldrivers/./../../lib/libicuuc.so.56 </span><br><span class="line">(0x00007fadbd83c000)</span><br><span class="line">	libicudata.so.56 =&gt; /opt/Qt5.6.0/5.6/gcc_64/plugins/sqldrivers/./../../lib/libicudata.so.56 </span><br><span class="line">(0x00007fadbbe59000)</span><br><span class="line">	libdl.so.2 =&gt; /lib/x86_64-linux-gnu/libdl.so.2 (0x00007fadbbc54000)</span><br><span class="line">	libgthread-2.0.so.0 =&gt; /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0 (0x00007fadbba52000)</span><br><span class="line">	librt.so.1 =&gt; /lib/x86_64-linux-gnu/librt.so.1 (0x00007fadbb84a000)</span><br><span class="line">	libglib-2.0.so.0 =&gt; /lib/x86_64-linux-gnu/libglib-2.0.so.0 (0x00007fadbb541000)</span><br><span class="line">	/lib64/ld-linux-x86-64.so.2 (0x00007fadc0083000)</span><br><span class="line">	libpcre.so.3 =&gt; /lib/x86_64-linux-gnu/libpcre.so.3 (0x00007fadbb303000)</span><br></pre></td></tr></table></figure>
+<p>可以看到<font color=red>libmysqlclient_r.so.16 =&gt; not found</font>，查看自己所有的libmysqlclient.so，在终端键入locate libmysqlclient.so命令，终端反馈如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib/x86_64-linux-gnu/libmysqlclient.so</span><br><span class="line">/usr/lib/x86_64-linux-gnu/libmysqlclient.so.18</span><br><span class="line">/usr/lib/x86_64-linux-gnu/libmysqlclient.so.18.0.0</span><br></pre></td></tr></table></figure>
+<p>可知到我们的依赖有这些，可以确定就是因为mysql驱动的动态链接库的版本不一致导致。</p>
+<h2 id="重新编译"><a href="#重新编译" class="headerlink" title="重新编译"></a>重新编译</h2><p>ok，咱们重新编译一下这个库。首先到qt的安装路径下找到源码的存放位置：/opt/Qt5.6.0/5.6/Src/qtbase/src/plugins/sqldrivers/mysql，然后右键在终端打开，接着使用su命令进入超级管理员身份，然后输入qmake命令，生成Makefile文件，接着输入make命令进行编译。编译过程中可能会出现以下问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rm -f libqsqlmysql.so</span><br><span class="line">g++ -Wl,--no-undefined -Wl,-O1 -Wl,--enable-new-dtags -Wl,-z,origin -Wl,-rpath,\$ORIGIN -Wl,-rpath,\$ORIGIN </span><br><span class="line">-Wl,-rpath,\$ORIGIN/../../lib -shared -o libqsqlmysql.so .obj/main.o .obj/qsql_mysql.o </span><br><span class="line">.obj/moc_qsql_mysql_p.o  -rdynamic -L/usr/lib64/mysql -lmysqlclient_r -lz -lcrypt -lnsl -lm -lssl -lcrypto </span><br><span class="line">-L/opt/Qt5.6.0/5.6/gcc_64/lib -lQt5Sql -lQt5Core -lpthread  </span><br><span class="line">&lt;strong&gt;&lt;span style=&quot;color:#ff0000;&quot;&gt;/usr/bin/ld: cannot find -lssl</span><br><span class="line">/usr/bin/ld: cannot find -lcrypto&lt;/span&gt;&lt;/strong&gt;</span><br><span class="line">collect2: error: ld returned 1 exit status</span><br><span class="line">make: *** [../../../../plugins/sqldrivers/libqsqlmysql.so] 错误 1</span><br></pre></td></tr></table></figure>
+<p>出现该问题说明缺少必要的动态链接库，使用以下命令获取安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libssl-dev</span><br><span class="line"></span><br><span class="line">sudo apt-get install libcrypto++-dev</span><br></pre></td></tr></table></figure>
+<p>安装结束之后，再使用make进行编译，终端反馈如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rm -f libqsqlmysql.so</span><br><span class="line">g++ -Wl,--no-undefined -Wl,-O1 -Wl,--enable-new-dtags -Wl,-z,origin -Wl,-rpath,\$ORIGIN -Wl,-rpath,\$ORIGIN </span><br><span class="line">-Wl,-rpath,\$ORIGIN/../../lib -shared -o libqsqlmysql.so .obj/main.o .obj/qsql_mysql.o </span><br><span class="line">.obj/moc_qsql_mysql_p.o  -rdynamic -L/usr/lib64/mysql -lmysqlclient_r -lz -lcrypt -lnsl -lm -lssl -lcrypto </span><br><span class="line">-L/opt/Qt5.6.0/5.6/gcc_64/lib -lQt5Sql -lQt5Core -lpthread  </span><br><span class="line">mv -f libqsqlmysql.so ../../../../plugins/sqldrivers/</span><br></pre></td></tr></table></figure>
+<p>说明已经编译成功，编译成功之后记得清理一下编译的中间文件：sudo make clean</p>
+<p>再次键入命令cd /opt/Qt5.6.0/5.6/gcc_64/plugins/sqldrivers定位到驱动所在文件夹，输入命令ldd libqsqlmysql.so查看动态库依赖关系，终端反馈如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">	linux-vdso.so.1 =&gt;  (0x00007fff1a77d000)</span><br><span class="line">	libmysqlclient.so.18 =&gt; /usr/lib/x86_64-linux-gnu/libmysqlclient.so.18 (0x00007fabac30f000) // 注意这句！！</span><br><span class="line">	libQt5Sql.so.5 =&gt; /opt/Qt5.6.0/5.6/gcc_64/plugins/sqldrivers/./../../lib/libQt5Sql.so.5 </span><br><span class="line">(0x00007fabac0ca000)</span><br><span class="line">	libQt5Core.so.5 =&gt; /opt/Qt5.6.0/5.6/gcc_64/plugins/sqldrivers/./../../lib/libQt5Core.so.5 </span><br><span class="line">(0x00007fabab9b8000)</span><br><span class="line">	libstdc++.so.6 =&gt; /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fabab6b4000)</span><br><span class="line">	libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00007fabab2ed000)</span><br><span class="line">	libz.so.1 =&gt; /lib/x86_64-linux-gnu/libz.so.1 (0x00007fabab0d4000)</span><br><span class="line">	libdl.so.2 =&gt; /lib/x86_64-linux-gnu/libdl.so.2 (0x00007fabaaed0000)</span><br><span class="line">	libpthread.so.0 =&gt; /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007fabaacb1000)</span><br><span class="line">	libm.so.6 =&gt; /lib/x86_64-linux-gnu/libm.so.6 (0x00007fabaa9ab000)</span><br><span class="line">	libgcc_s.so.1 =&gt; /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fabaa795000)</span><br><span class="line">	libicui18n.so.56 =&gt; /opt/Qt5.6.0/5.6/gcc_64/plugins/sqldrivers/./../../lib/libicui18n.so.56 </span><br><span class="line">(0x00007fabaa2fa000)</span><br><span class="line">	libicuuc.so.56 =&gt; /opt/Qt5.6.0/5.6/gcc_64/plugins/sqldrivers/./../../lib/libicuuc.so.56 </span><br><span class="line">(0x00007faba9f42000)</span><br><span class="line">	libicudata.so.56 =&gt; /opt/Qt5.6.0/5.6/gcc_64/plugins/sqldrivers/./../../lib/libicudata.so.56 </span><br><span class="line">(0x00007faba855f000)</span><br><span class="line">	libgthread-2.0.so.0 =&gt; /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0 (0x00007faba835c000)</span><br><span class="line">	librt.so.1 =&gt; /lib/x86_64-linux-gnu/librt.so.1 (0x00007faba8154000)</span><br><span class="line">	libglib-2.0.so.0 =&gt; /lib/x86_64-linux-gnu/libglib-2.0.so.0 (0x00007faba7e4c000)</span><br><span class="line">	/lib64/ld-linux-x86-64.so.2 (0x00007fabaca73000)</span><br><span class="line">	libpcre.so.3 =&gt; /lib/x86_64-linux-gnu/libpcre.so.3 (0x00007faba7c0d000)</span><br></pre></td></tr></table></figure>
+<p>libmysqlclient.so.18 =&gt;/usr/lib/x86_64-linux-gnu/libmysqlclient.so.18 (0x00007fabac30f000)证明已经是最新的动态链接库了。最后再次运行代码，显示链接成功。<br><img src="/img/qt%E8%BF%9E%E6%8E%A5mysql%E6%88%90%E5%8A%9F.png" alt="qt连接mysql成功"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JavaScript数组中的slice方法和aplice方法的区别 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZuPerfect 朱鹏飞,"> 
+    <meta name="description" content="背景由于在面试的时候在这个问题上吃了亏，当时的那个尴尬呀，自己明知道是很基础的知识，但是由于平时用的比较少，居然没有回答上来，特此在这里做一个记录，记住当时那个面试尴尬的教训！😭
+区别Array.,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" target="_blank" rel="noopener" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">JavaScript数组中的slice方法和aplice方法的区别</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;" target="_blank" rel="noopener"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">JavaScript数组中的slice方法和aplice方法的区别</h1>
+        <div class="stuff">
+            <span>十一月 24, 2019</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>由于在面试的时候在这个问题上吃了亏，当时的那个尴尬呀，自己明知道是很基础的知识，但是由于平时用的比较少，居然没有回答上来，特此在这里做一个记录，记住当时那个面试尴尬的教训！😭</p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><h1 id="Array-slice"><a href="#Array-slice" class="headerlink" title="Array.slice()"></a>Array.slice()</h1><p>Array.slice()方法返回指定数组的一个片段或者子数组。它的两个参数分别指定了片段的开始和结束的位置。<font color=red>返回的数组包含第一个参数指定的位置和所有到<strong>但不包含第二个参数指定的位置</strong>之间的所有数组元素</font>，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];</span><br><span class="line">a.slice(<span class="number">0</span>,<span class="number">1</span>)  <span class="comment">//返回[1]</span></span><br><span class="line">a.slice(<span class="number">0</span>,<span class="number">3</span>)  <span class="comment">//返回[1,2,3]</span></span><br></pre></td></tr></table></figure>
+<h3 id="脚下留心"><a href="#脚下留心" class="headerlink" title="脚下留心"></a>脚下留心</h3><p>1、如果只指定一个参数，则返回的数组将包含从开始位置到数组结尾的所有元素。如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.slice(<span class="number">2</span>)  <span class="comment">//返回[3,4,5,6,7]</span></span><br></pre></td></tr></table></figure>
+<p>2、如果参数中出现了负数，它表示相对于数组最后一个元素的位置，例如，参数-1指定了最后一个元素，而-3指定了数组第三个元素，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.slice(<span class="number">-3</span>,<span class="number">-1</span>)  <span class="comment">//返回[5,6]</span></span><br></pre></td></tr></table></figure>
+<p>3、如果不给参数，则返回的数组包含所有元素，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.slice()   <span class="comment">//返回[1,2,3,4,5,6,7]</span></span><br></pre></td></tr></table></figure>
+<p><font color=red><strong>但是此处需要注意一个问题：a.slice()方法虽然返回了一个新的数组，但是不能贸然的使用该方法用作数组的拷贝。</strong></font>看如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c=[&#123;<span class="attr">c1</span>:<span class="number">1</span>&#125;,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]];  <span class="comment">//定义一个元素为引用类型的数组</span></span><br><span class="line"><span class="keyword">var</span> b=c.slice()          <span class="comment">//b=[&#123;c1:1&#125;,[1,2,3]]</span></span><br><span class="line">b[<span class="number">0</span>].c1=<span class="number">99</span>;              <span class="comment">//改变b数组内部引用类型的值</span></span><br><span class="line">b[<span class="number">1</span>][<span class="number">0</span>]=<span class="number">99</span>;              <span class="comment">//改变b数组内部引用类型的值</span></span><br><span class="line"><span class="built_in">console</span>.log(c)           <span class="comment">//c=[&#123;c1:99&#125;,[99,2,3]]</span></span><br></pre></td></tr></table></figure>
+<p>可以看到如果数组元素为引用类型，并没有实现深拷贝的作用，与这个方法具有同样坑的数组方法还有map()方法，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b=c.map(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;<span class="keyword">return</span> i;&#125;)  <span class="comment">//返回新数组，但是不能用作数组深拷贝</span></span><br></pre></td></tr></table></figure>
+<h2 id="特别注意！"><a href="#特别注意！" class="headerlink" title="特别注意！"></a><font color=red><strong><em>特别注意！</em></strong></font></h2><p><font color=red>slice()方法不会修改调用的数组。如下所示：</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a.slice(<span class="number">0</span>,<span class="number">1</span>)    <span class="comment">//返回[1]</span></span><br><span class="line"><span class="built_in">console</span>.log(a)  <span class="comment">//[1,2,3,4,5,6,7]</span></span><br></pre></td></tr></table></figure>
+<h1 id="Array-splice"><a href="#Array-splice" class="headerlink" title="Array.splice()"></a>Array.splice()</h1><p>Array.splice()方法是在数组中插入或删除元素的通用方法。不同于slice()方法，splice会修改调用的数组。</p>
+<p>该方法可以完成三种数组的操作，分别是：</p>
+<p>1、从数组中删除元素</p>
+<p>2、插入元素到数组中</p>
+<p>3、同时完成以上两种操作</p>
+<p>splice()的第一个参数指定了插入和（或）删除的起始位置。第二个参数指定了应该从数组中删除元素的个数。<font color=red><strong>如果省略第二个参数，则从起始点开始到数组结尾的所有元素都将被删除。</strong></font>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];</span><br><span class="line">a.splice(<span class="number">0</span>,<span class="number">2</span>);              <span class="comment">//返回[1,2],a=[3,4,5,6,7]</span></span><br><span class="line">a.splice(<span class="number">0</span>);                <span class="comment">//返回[3,4,5,6,7],a=[]</span></span><br></pre></td></tr></table></figure>
+<p><strong>更多紧随其后的任意个数的参数</strong>指定了需要插入到数组里面的参数，从第一个参数的指定位置开始插入。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];</span><br><span class="line">a.splice(<span class="number">2</span>,<span class="number">0</span>,<span class="string">"a"</span>,<span class="string">"b"</span>,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])   <span class="comment">//返回[] a=[1,2,"a","b",[1,2,3],3,4,5,6,7]</span></span><br><span class="line">a.splice(<span class="number">2</span>,<span class="number">2</span>,<span class="string">"a"</span>,<span class="string">"b"</span>,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])   <span class="comment">//返回["a","b"] a=[1,2,"a","b",[1,2,3],[1,2,3],3,4,5,6,7]</span></span><br></pre></td></tr></table></figure>
+<h2 id="脚下留心-1"><a href="#脚下留心-1" class="headerlink" title="脚下留心"></a>脚下留心</h2><p>如果不传参数呢？不传参数不会改变调用的数组，返回[],例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.splice()    <span class="comment">//返回[] a=[1,2,"a","b",[1,2,3],[1,2,3],3,4,5,6,7]</span></span><br></pre></td></tr></table></figure>
+<h2 id="特别注意！-1"><a href="#特别注意！-1" class="headerlink" title="特别注意！"></a><font color=red><strong><em>特别注意！</em></strong></font></h2><p><font color=red>splice()方法会修改调用的数组。</font></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
