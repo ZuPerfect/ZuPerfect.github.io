@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>📚 Javascript | 香蕉，你个卟啦啦</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo/bnn.png">
+    <meta name="description" content="不积跬步无以至千里">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.bf842d89.js" as="script"><link rel="preload" href="/assets/js/2.853c7517.js" as="script"><link rel="preload" href="/assets/js/32.8ad120c4.js" as="script"><link rel="prefetch" href="/assets/js/10.c77c7da3.js"><link rel="prefetch" href="/assets/js/11.c21b8900.js"><link rel="prefetch" href="/assets/js/12.194adaf0.js"><link rel="prefetch" href="/assets/js/13.47483d40.js"><link rel="prefetch" href="/assets/js/14.45582356.js"><link rel="prefetch" href="/assets/js/15.d2b26bb3.js"><link rel="prefetch" href="/assets/js/16.770f539f.js"><link rel="prefetch" href="/assets/js/17.fa5a4f12.js"><link rel="prefetch" href="/assets/js/18.28e3d1a3.js"><link rel="prefetch" href="/assets/js/19.b1e97010.js"><link rel="prefetch" href="/assets/js/20.7675f687.js"><link rel="prefetch" href="/assets/js/21.eedf34a9.js"><link rel="prefetch" href="/assets/js/22.c6326021.js"><link rel="prefetch" href="/assets/js/23.99d97383.js"><link rel="prefetch" href="/assets/js/24.c075f0e3.js"><link rel="prefetch" href="/assets/js/25.672f6b5f.js"><link rel="prefetch" href="/assets/js/26.ec98cb7f.js"><link rel="prefetch" href="/assets/js/27.d44ded3d.js"><link rel="prefetch" href="/assets/js/28.ee530aa5.js"><link rel="prefetch" href="/assets/js/29.0b9c2479.js"><link rel="prefetch" href="/assets/js/3.5425d4ff.js"><link rel="prefetch" href="/assets/js/30.a3dd0d6e.js"><link rel="prefetch" href="/assets/js/31.eacd6560.js"><link rel="prefetch" href="/assets/js/33.6c22e33e.js"><link rel="prefetch" href="/assets/js/34.1b5f5f91.js"><link rel="prefetch" href="/assets/js/35.eb69f99c.js"><link rel="prefetch" href="/assets/js/36.0a2c52f0.js"><link rel="prefetch" href="/assets/js/37.726ef05f.js"><link rel="prefetch" href="/assets/js/38.d8814860.js"><link rel="prefetch" href="/assets/js/39.203d9c41.js"><link rel="prefetch" href="/assets/js/4.7b294a7a.js"><link rel="prefetch" href="/assets/js/40.8710d216.js"><link rel="prefetch" href="/assets/js/41.f254c4d9.js"><link rel="prefetch" href="/assets/js/42.4cfa1228.js"><link rel="prefetch" href="/assets/js/43.e78bcbda.js"><link rel="prefetch" href="/assets/js/44.399fddf9.js"><link rel="prefetch" href="/assets/js/45.fc87e001.js"><link rel="prefetch" href="/assets/js/46.1c8e1956.js"><link rel="prefetch" href="/assets/js/47.8b061c25.js"><link rel="prefetch" href="/assets/js/48.b21461e5.js"><link rel="prefetch" href="/assets/js/49.996bc9c0.js"><link rel="prefetch" href="/assets/js/5.1995693d.js"><link rel="prefetch" href="/assets/js/50.7f385b39.js"><link rel="prefetch" href="/assets/js/51.5bd5394b.js"><link rel="prefetch" href="/assets/js/52.3b13fd15.js"><link rel="prefetch" href="/assets/js/53.86fe9479.js"><link rel="prefetch" href="/assets/js/54.2e56a9e6.js"><link rel="prefetch" href="/assets/js/55.5e2964e6.js"><link rel="prefetch" href="/assets/js/56.a9d5fa0a.js"><link rel="prefetch" href="/assets/js/57.e50cab16.js"><link rel="prefetch" href="/assets/js/58.cefd7071.js"><link rel="prefetch" href="/assets/js/6.8381d72e.js"><link rel="prefetch" href="/assets/js/7.b0d7b2eb.js"><link rel="prefetch" href="/assets/js/8.4a0ff87e.js"><link rel="prefetch" href="/assets/js/9.0c359db3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo/bnn.png" alt="香蕉，你个卟啦啦" class="logo"> <span class="site-name can-hide">香蕉，你个卟啦啦</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础语言" class="dropdown-title"><span class="title">基础语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础语言" class="mobile-dropdown-title"><span class="title">基础语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HTML
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗❗HTML基础知识学习
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗❗HTML编写规则和语义化写法
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗❗表单和验证
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗公约和最佳时间方法
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  SEO基础知识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          CSS
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/css/chinese/" class="nav-link">
+  CSS基础知识学习
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  页面切图和布局实现
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  页面响应式布局设计
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  CSS预处理语言
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  CSS相关框架
+</a></li><li class="dropdown-subitem"><a href="/css/flex.html" class="nav-link">
+  Flex
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JavaScript
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/js/basis/JavaScript数组中的slice方法和aplice方法的区别.html" class="nav-link">
+  JavaScript基础语法和知识
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  使用Javascript操作DOM元素
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Ajax异步请求相关知识学习
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  ES6以上版本的Javascript
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Javascript语法糖
+</a></li></ul></li><li class="dropdown-item"><h4>
+          TypeScript
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  入门
+</a></li><li class="dropdown-subitem"><a href="/ts/ts在react中的使用.html" class="nav-link">
+  在react中的使用
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="浏览器脚本语言" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="浏览器脚本语言" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          React.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/foxglove.html" class="nav-link">
+  Foxglove面板扩展
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vue/初识vue.html" class="nav-link">
+  初识vue
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue3.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vue3/customRef.html" class="nav-link">
+  customRef
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Angular
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Angular
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="浏览器脚本语言" class="dropdown-title"><span class="title">GIS</span> <span class="arrow down"></span></button> <button type="button" aria-label="浏览器脚本语言" class="mobile-dropdown-title"><span class="title">GIS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          开源库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webgis/turf/turf之计算两个polygon的重叠部分.html" class="nav-link">
+  turf
+</a></li><li class="dropdown-subitem"><a href="/webgis/leaflet/" class="nav-link">
+  leaflet
+</a></li><li class="dropdown-subitem"><a href="/webgis/cesium/局部坐标系使用.html" class="nav-link">
+  cesium
+</a></li></ul></li><li class="dropdown-item"><h4>
+          地图学知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webgis/" class="nav-link">
+  参考系
+</a></li><li class="dropdown-subitem"><a href="/webgis/node/lineOverlap.html" class="nav-link">
+  几何运算
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="三维开发" class="dropdown-title"><span class="title">三维开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="三维开发" class="mobile-dropdown-title"><span class="title">三维开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          三维引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/ZuPerfect/ThreeJsDemo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  three.js
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/webgis/cesium/局部坐标系使用.html" class="nav-link">
+  cesium.js
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="网络知识" class="dropdown-title"><span class="title">网络知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="网络知识" class="mobile-dropdown-title"><span class="title">网络知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  ❗❗网络工作原理
+</a></li><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  ❗❗什么是HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  ❗❗浏览器及工作方式
+</a></li><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  ❗DNS及其工作原理
+</a></li><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  ❗❗域名相关知识
+</a></li><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  云服务相关知识
+</a></li><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  网络安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="构建工具" class="dropdown-title"><span class="title">构建工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="构建工具" class="mobile-dropdown-title"><span class="title">构建工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          任务执行命令
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  npm script
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Gulp
+</a></li></ul></li><li class="dropdown-item"><h4>
+          打包工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  vite
+</a></li></ul></li><li class="dropdown-item"><h4>
+          代码格式化工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Prettier
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Eslint
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="浏览器脚本语言" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="浏览器脚本语言" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          图形化编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Cocos Creator
+</a></li></ul></li><li class="dropdown-item"><h4>
+          静态站点生成器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/staticSide/index.html" class="nav-link">
+  Vuepress
+</a></li></ul></li><li class="dropdown-item"><h4>
+          移动APP开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  React Native
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  UniApp
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Flutter
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  lonic
+</a></li></ul></li><li class="dropdown-item"><h4>
+          桌面应用开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Electron
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/language/" class="nav-link">
+  服务端渲染
+</a></li><li class="dropdown-item"><h4>
+          包管理工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  yarn
+</a></li></ul></li><li class="dropdown-item"><h4>
+          版本控制
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/git/command.html" class="nav-link">
+  git
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  svn
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/interview/js/JS基础速记.html" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/vscode/setting.html" class="nav-link">
+  VSCode
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础语言" class="dropdown-title"><span class="title">基础语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础语言" class="mobile-dropdown-title"><span class="title">基础语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HTML
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗❗HTML基础知识学习
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗❗HTML编写规则和语义化写法
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗❗表单和验证
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗公约和最佳时间方法
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  SEO基础知识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          CSS
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/css/chinese/" class="nav-link">
+  CSS基础知识学习
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  页面切图和布局实现
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  页面响应式布局设计
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  CSS预处理语言
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  CSS相关框架
+</a></li><li class="dropdown-subitem"><a href="/css/flex.html" class="nav-link">
+  Flex
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JavaScript
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/js/basis/JavaScript数组中的slice方法和aplice方法的区别.html" class="nav-link">
+  JavaScript基础语法和知识
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  使用Javascript操作DOM元素
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Ajax异步请求相关知识学习
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  ES6以上版本的Javascript
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Javascript语法糖
+</a></li></ul></li><li class="dropdown-item"><h4>
+          TypeScript
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  入门
+</a></li><li class="dropdown-subitem"><a href="/ts/ts在react中的使用.html" class="nav-link">
+  在react中的使用
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="浏览器脚本语言" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="浏览器脚本语言" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          React.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/foxglove.html" class="nav-link">
+  Foxglove面板扩展
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vue/初识vue.html" class="nav-link">
+  初识vue
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue3.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vue3/customRef.html" class="nav-link">
+  customRef
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Angular
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Angular
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="浏览器脚本语言" class="dropdown-title"><span class="title">GIS</span> <span class="arrow down"></span></button> <button type="button" aria-label="浏览器脚本语言" class="mobile-dropdown-title"><span class="title">GIS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          开源库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webgis/turf/turf之计算两个polygon的重叠部分.html" class="nav-link">
+  turf
+</a></li><li class="dropdown-subitem"><a href="/webgis/leaflet/" class="nav-link">
+  leaflet
+</a></li><li class="dropdown-subitem"><a href="/webgis/cesium/局部坐标系使用.html" class="nav-link">
+  cesium
+</a></li></ul></li><li class="dropdown-item"><h4>
+          地图学知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webgis/" class="nav-link">
+  参考系
+</a></li><li class="dropdown-subitem"><a href="/webgis/node/lineOverlap.html" class="nav-link">
+  几何运算
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="三维开发" class="dropdown-title"><span class="title">三维开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="三维开发" class="mobile-dropdown-title"><span class="title">三维开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          三维引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/ZuPerfect/ThreeJsDemo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  three.js
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/webgis/cesium/局部坐标系使用.html" class="nav-link">
+  cesium.js
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="网络知识" class="dropdown-title"><span class="title">网络知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="网络知识" class="mobile-dropdown-title"><span class="title">网络知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  ❗❗网络工作原理
+</a></li><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  ❗❗什么是HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  ❗❗浏览器及工作方式
+</a></li><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  ❗DNS及其工作原理
+</a></li><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  ❗❗域名相关知识
+</a></li><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  云服务相关知识
+</a></li><li class="dropdown-item"><!----> <a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  网络安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="构建工具" class="dropdown-title"><span class="title">构建工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="构建工具" class="mobile-dropdown-title"><span class="title">构建工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          任务执行命令
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  npm script
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Gulp
+</a></li></ul></li><li class="dropdown-item"><h4>
+          打包工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  vite
+</a></li></ul></li><li class="dropdown-item"><h4>
+          代码格式化工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Prettier
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Eslint
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="浏览器脚本语言" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="浏览器脚本语言" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          图形化编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Cocos Creator
+</a></li></ul></li><li class="dropdown-item"><h4>
+          静态站点生成器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/staticSide/index.html" class="nav-link">
+  Vuepress
+</a></li></ul></li><li class="dropdown-item"><h4>
+          移动APP开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  React Native
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  UniApp
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Flutter
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  lonic
+</a></li></ul></li><li class="dropdown-item"><h4>
+          桌面应用开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  Electron
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/language/" class="nav-link">
+  服务端渲染
+</a></li><li class="dropdown-item"><h4>
+          包管理工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  yarn
+</a></li></ul></li><li class="dropdown-item"><h4>
+          版本控制
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/git/command.html" class="nav-link">
+  git
+</a></li><li class="dropdown-subitem"><a href="/interview/%E9%A2%98%E5%BA%93/.html" class="nav-link">
+  svn
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/interview/js/JS基础速记.html" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/vscode/setting.html" class="nav-link">
+  VSCode
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>题库</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/interview/题库/题库.html" class="active sidebar-link">题库</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/interview/题库/题库.html#📚-javascript" class="sidebar-link">📚 Javascript</a></li><li class="sidebar-sub-header"><a href="/interview/题库/题库.html#📚-vue" class="sidebar-link">📚 vue</a></li><li class="sidebar-sub-header"><a href="/interview/题库/题库.html#📚-网络" class="sidebar-link">📚 网络</a></li><li class="sidebar-sub-header"><a href="/interview/题库/题库.html#📚-浏览器" class="sidebar-link">📚 浏览器</a></li><li class="sidebar-sub-header"><a href="/interview/题库/题库.html#📚-webpack" class="sidebar-link">📚 webpack</a></li><li class="sidebar-sub-header"><a href="/interview/题库/题库.html#📚-性能" class="sidebar-link">📚 性能</a></li><li class="sidebar-sub-header"><a href="/interview/题库/题库.html#📚-安全" class="sidebar-link">📚 安全</a></li><li class="sidebar-sub-header"><a href="/interview/题库/题库.html#📚-业务" class="sidebar-link">📚 业务</a></li><li class="sidebar-sub-header"><a href="/interview/题库/题库.html#📚-算法" class="sidebar-link">📚 算法</a></li><li class="sidebar-sub-header"><a href="/interview/题库/题库.html#_2023-10-24-整理" class="sidebar-link">2023.10.24 整理</a></li><li class="sidebar-sub-header"><a href="/interview/题库/题库.html#_2023-10-25-整理" class="sidebar-link">2023.10.25 整理</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>算法</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="📚-javascript"><a href="#📚-javascript" class="header-anchor">#</a> 📚 Javascript</h2> <h3 id="_1、如何直接在原数组里面删除偶数-注-直接在原数组上操作-不产生新的数组-sw"><a href="#_1、如何直接在原数组里面删除偶数-注-直接在原数组上操作-不产生新的数组-sw" class="header-anchor">#</a> 1、如何直接在原数组里面删除偶数？注：直接在原数组上操作，不产生新的数组！（@sw）</h3> <h3 id="_2、说下-js-中的事件循环机制"><a href="#_2、说下-js-中的事件循环机制" class="header-anchor">#</a> 2、说下 JS 中的事件循环机制</h3> <p>JS 的任务分为同步任务和异步任务：</p> <ul><li>任务队列分为同步任务队列和异步任务队列；</li> <li>代码执行时，遇到同步代码，会被直接推入同步任务队列并依次执行；</li> <li>遇到异步代码（如 setTimeout、setInteval）会被直接推入异步任务队列；</li> <li>当同步任务队列执行完毕，这个时候异步任务队列的任务会被一次推入同步任务队列并依次执行</li></ul> <p>JS 的任务队列分为：
+宏任务：setTimeout setInterval
+微任务：Promise.then 方法。注意 new Promise()的时候是同步的，会立即执行。
+注意：现在有三个队列：同步队列（也称为执行栈）、宏任务队列、微任务队列
+所以，针对这种机制，js 的事件循环机制应该是这样的：</p> <ul><li>遇到同步代码，依次推入同步队列并执行</li> <li>当遇到 setTimeout setInterval,会被推到宏任务队列</li> <li>如果遇到.then，会被当做微任务，被推入微任务队列</li> <li>同步队列执行完毕，然后去微任务取任务，直到微任务队列清空。然后检查宏任务队列，去宏队列取任务，并且每一个宏任务执行完毕都会去微任务队列跑一遍，看看有没有新的微任务，有的话再把微任务清空。这样依次循环。</li></ul> <p>同步代码—微任务（要全部执行）—&gt;宏任务（执行一个）—&gt;微任务（全部执行）—&gt;宏任务（执行一个）</p> <p>详细移步这里：<a href="/interview/题库/js/node/一道关于JS微任务和宏任务的面试题(头条).html">一道关于 JS 微任务和宏任务的面试题(头条)</a></p> <h3 id="_3、说下-js-中的闭包吧-sw"><a href="#_3、说下-js-中的闭包吧-sw" class="header-anchor">#</a> 3、说下 JS 中的闭包吧（@sw）</h3> <h3 id="_4、js-中的继承的几种实现方式-es5、es6-sw"><a href="#_4、js-中的继承的几种实现方式-es5、es6-sw" class="header-anchor">#</a> 4、JS 中的继承的几种实现方式，ES5、ES6（@sw）</h3> <h3 id="_5、节流和防抖-sw"><a href="#_5、节流和防抖-sw" class="header-anchor">#</a> 5、节流和防抖（@sw）</h3> <h3 id="_6、js-中的-sort-方法内部实现原理是什么-使用了什么排序-hk"><a href="#_6、js-中的-sort-方法内部实现原理是什么-使用了什么排序-hk" class="header-anchor">#</a> 6、js 中的 sort 方法内部实现原理是什么，使用了什么排序（@hk）</h3> <div class="language- extra-class"><pre class="language-text"><code>在 JavaScript 中，Array.prototype.sort() 方法使用的排序算法是实现依赖于浏览器和 JavaScript 引擎。这意味着不同的浏览器和 JavaScript 引擎可能会使用不同的排序算法。
+
+在 V8 引擎中，它将使用快速排序（Quicksort）作为默认排序算法。当数组长度小于或等于 10 时，它将使用插入排序（Insertion Sort）。对于包含大量重复元素的数组，V8 会使用三路快速排序（Three-way Quicksort）。
+
+另外，一些浏览器也支持稳定排序（Stable Sort），其中相等元素的顺序在排序后不会改变。但是，如果排序算法不稳定，则相等元素的顺序可能会发生改变。因此，如果需要稳定排序，则应该在使用 sort() 方法时进行检查。
+</code></pre></div><h3 id="_7、说一下-js-的原型链-hk-sw"><a href="#_7、说一下-js-的原型链-hk-sw" class="header-anchor">#</a> 7、说一下 JS 的原型链（@hk@sw）</h3> <ul><li><p>所有的函数的<strong>proto</strong>都是指向 Function.prototype，包括普通的方法、Object、Function；</p></li> <li><p>所有的普通对象的<strong>proto</strong>都是指向 Object.prototype，包括用 Object 构造函数所创建的对象、函数的 prototype 对象，但不包括 Object 的；</p></li> <li><p>Object.prototype 对象的<strong>proto</strong>指向 null。</p></li></ul> <h3 id="_8、箭头函数和普通函数的区别-hk-sw"><a href="#_8、箭头函数和普通函数的区别-hk-sw" class="header-anchor">#</a> 8、箭头函数和普通函数的区别（@hk@sw）</h3> <ul><li><p>函数体内的 this 对象，就是定义时所在的对象，而不是使用时所在的对象，用 call apply bind 也不能改变 this 指向</p></li> <li><p>不可以当作构造函数，也就是说，不可以使用 new 命令，否则会抛出一个错误。</p></li> <li><p>不可以使用 arguments 对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。</p></li> <li><p>不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数。</p></li> <li><p>箭头函数没有原型对象 prototype</p></li></ul> <h3 id="_9、说下-es6-中的-set、map、weakset、weakmap-对象-hk"><a href="#_9、说下-es6-中的-set、map、weakset、weakmap-对象-hk" class="header-anchor">#</a> 9、说下 ES6 中的 Set、Map、WeakSet、WeakMap 对象（@hk）</h3> <h4 id="set"><a href="#set" class="header-anchor">#</a> Set</h4> <p>类似于一个数组，他里面每一项值都是唯一的，没有重复的值</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>item <span class="token operator">=</span>arr<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//向set添加重复的值for (let i of s) {</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 2 3 5 4 结果set不会添加重复的值</span>
+</code></pre></div><p>使用场景</p> <ul><li>计算数组的并集</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>arr1<span class="token punctuation">,</span> <span class="token operator">...</span>arr2<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//这样就把重复的3去掉了</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>s1<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//这就是并集的结果了</span>
+</code></pre></div><ul><li>数组去重</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>item <span class="token operator">=</span>arr<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//向set添加重复的值for (let i of s) {</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 2 3 5 4 结果set不会添加重复的值</span>
+</code></pre></div><h4 id="weakset"><a href="#weakset" class="header-anchor">#</a> WeakSet</h4> <p>WeakSet 结构与 Set 类似，也是不重复的值的集合。但是，它与 Set 有两个区别。</p> <ul><li>首先，WeakSet 的成员只能是对象，而不能是其他类型的值</li> <li>其次，WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存，不考虑该对象还存在于 WeakSet 之中</li></ul> <h4 id="map"><a href="#map" class="header-anchor">#</a> Map</h4> <p>Map 类似于对象，也是键值对的集合，但是“键”的范围不限制于字符串，各种类型的值（包括对象）都可以当作键。Map 也可以接受一个数组作为参数，数组的成员是一个个表示键值对的数组。注意 Map 里面也不可以放重复的项。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;js&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">&quot;js&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//看看是否可以放重复的项</span>
+map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">&quot;javaScript&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Map {'js' ='react','javaScript' ='vue'} 不可以放重复项</span>
+</code></pre></div><h4 id="weakmap"><a href="#weakmap" class="header-anchor">#</a> WeakMap</h4> <p>WeakMap 结构与 Map 结构类似，也是用于生成键值对的集合。WeakMap 与 Map 的区别有两点。</p> <ul><li>首先，WeakMap 只接受对象作为键名（null 除外），不接受其他类型的值作为键名。</li> <li>其次，WeakMap 的键名所指向的对象，不计入垃圾回收机制。
+详细移步<a href="https://es6.ruanyifeng.com/#docs/set-map#WeakSet" target="_blank" rel="noopener noreferrer">这里<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h3 id="_10、事件冒泡的顺序"><a href="#_10、事件冒泡的顺序" class="header-anchor">#</a> 10、事件冒泡的顺序</h3> <h2 id="📚-vue"><a href="#📚-vue" class="header-anchor">#</a> 📚 vue</h2> <h3 id="_1、vue-的底层原理-例-如何实现的数据双向绑定-diff-算法的原理-hk-腾讯云"><a href="#_1、vue-的底层原理-例-如何实现的数据双向绑定-diff-算法的原理-hk-腾讯云" class="header-anchor">#</a> 1、vue 的底层原理，例：如何实现的数据双向绑定，diff 算法的原理（@hk@腾讯云）</h3> <h2 id="📚-网络"><a href="#📚-网络" class="header-anchor">#</a> 📚 网络</h2> <h3 id="_1、http-相关的问题-比如状态码-https-的加密方式等等-hk-弱项-下来需要注重加强"><a href="#_1、http-相关的问题-比如状态码-https-的加密方式等等-hk-弱项-下来需要注重加强" class="header-anchor">#</a> 1、http 相关的问题，比如状态码，https 的加密方式等等（@hk）<strong>弱项，下来需要注重加强</strong></h3> <h3 id="_2、如何解决浏览器跨域-腾讯云"><a href="#_2、如何解决浏览器跨域-腾讯云" class="header-anchor">#</a> 2、如何解决浏览器跨域（@腾讯云）</h3> <h3 id="_3、http2-新特性-腾讯云"><a href="#_3、http2-新特性-腾讯云" class="header-anchor">#</a> 3、http2 新特性（@腾讯云）</h3> <h2 id="📚-浏览器"><a href="#📚-浏览器" class="header-anchor">#</a> 📚 浏览器</h2> <h3 id="_1、浏览器的缓存机制-hk"><a href="#_1、浏览器的缓存机制-hk" class="header-anchor">#</a> 1、浏览器的缓存机制（@hk）</h3> <p>cookies、sessionStorage、localStorage</p> <p>区别：从数据的生命周期、数据存储大小、是否参与 http 请求三个方面说</p> <ul><li><p>数据的生命周期</p> <p>cookies：一般由服务端生成，可以通过设置 http 请求头里面的（catch-control）设置数据的过期的时间；</p> <p>sessionStorage：浏览器关闭就会清除；</p> <p>localStorage：除非手动清除，不然一直存在。</p></li> <li><p>数据的存储大小</p> <p>cookies：4k 左右；</p> <p>sessionStorage：5M 左右；</p> <p>localStorage：5M 左右。</p></li> <li><p>是否参与 http 请求</p> <p>cookies：每次都会携带在请求 header 中，会影响请求性能；</p> <p>sessionStorage：不参与；</p> <p>localStorage：不参与。</p></li></ul> <h3 id="_2、浏览器渲染原理与过程-my"><a href="#_2、浏览器渲染原理与过程-my" class="header-anchor">#</a> 2、浏览器渲染原理与过程（@MY）</h3> <h2 id="📚-webpack"><a href="#📚-webpack" class="header-anchor">#</a> 📚 webpack</h2> <h3 id="_1、webpack-了解多少-loader-和-plugin-的区别-hk"><a href="#_1、webpack-了解多少-loader-和-plugin-的区别-hk" class="header-anchor">#</a> 1、webpack 了解多少，loader 和 plugin 的区别（@hk）</h3> <ul><li><p>Loader 本质就是一个函数，在该函数中对接收到的内容进行转换，返回转换后的结果。因为 Webpack 只认识 JavaScript，所以 Loader 就成了翻译官，对其他类型的资源进行转译的预处理工作。</p></li> <li><p>Plugin 就是插件，基于事件流框架 Tapable，插件可以扩展 Webpack 的功能，在 Webpack 运行的生命周期中会广播出许多事件，Plugin 可以监听这些事件，在合适的时机通过 Webpack 提供的 API 改变输出结果。</p></li> <li><p>Loader 在 module.rules 中配置，作为模块的解析规则，类型为数组。每一项都是一个 Object，内部包含了 test(类型文件)、loader、options (参数)等属性。</p></li> <li><p>Plugin 在 plugins 中单独配置，类型为数组，每一项是一个 Plugin 的实例，参数都通过构造函数传入。</p></li></ul> <h3 id="_2、webpack-打包流程-腾讯云-my"><a href="#_2、webpack-打包流程-腾讯云-my" class="header-anchor">#</a> 2、webpack 打包流程（@腾讯云@MY）</h3> <h2 id="📚-性能"><a href="#📚-性能" class="header-anchor">#</a> 📚 性能</h2> <h2 id="📚-安全"><a href="#📚-安全" class="header-anchor">#</a> 📚 安全</h2> <h2 id="📚-业务"><a href="#📚-业务" class="header-anchor">#</a> 📚 业务</h2> <h3 id="_1、说一个你最新做的项目吧-你在项目过程中遇到了哪些具体的问题-hk-sw"><a href="#_1、说一个你最新做的项目吧-你在项目过程中遇到了哪些具体的问题-hk-sw" class="header-anchor">#</a> 1、说一个你最新做的项目吧，你在项目过程中遇到了哪些具体的问题？（@hk@sw）</h3> <h3 id="_2、服务接口延期了-你如何推进项目进度-hk"><a href="#_2、服务接口延期了-你如何推进项目进度-hk" class="header-anchor">#</a> 2、服务接口延期了，你如何推进项目进度（@hk）</h3> <h2 id="📚-算法"><a href="#📚-算法" class="header-anchor">#</a> 📚 算法</h2> <h3 id="_1、微信发红包随机数如何计算-10-元发给-5-个人-随机分配-hk"><a href="#_1、微信发红包随机数如何计算-10-元发给-5-个人-随机分配-hk" class="header-anchor">#</a> 1、微信发红包随机数如何计算，10 元发给 5 个人，随机分配（@hk）</h3> <h2 id="_2023-10-24-整理"><a href="#_2023-10-24-整理" class="header-anchor">#</a> 2023.10.24 整理</h2> <h3 id="八股"><a href="#八股" class="header-anchor">#</a> 八股</h3> <ol><li>原型及原型链、原型链是什么？为什么用它？</li></ol> <div class="language- extra-class"><pre class="language-text"><code>   js 中可以使用构造函数去创建对象，每个构造函数上面有会有一个 prototype 属性，该属性是一个对象，被称为该函数的原型，
+   原型对象里面记录了由该构造函数创建的对象所共享的所有属性和方法，然后每一个对象都会有一个指针指向其构造函数中的原型对象，
+   当一个对象读取一个属性或者调用一个方法的时候，会先在自己的属性里面寻找，如果找不到就会去自己的原型对象里面查找，然后
+   原型对象又有自己的原型对象，就这样一直查找下去，就形成了原型链的概念，原型的主要作用是为了共享属性和方法
+</code></pre></div><ol start="2"><li>闭包</li></ol> <div class="language- extra-class"><pre class="language-text"><code>在一个函数作用域里面使用了另一个函数作用域的值，该函数就形成了一个闭包
+</code></pre></div><ol start="3"><li>Promise、then 和 catch 的区别是什么？、为什么有 async 和 await</li></ol> <p>promise 是异步编程的一种解决方案，它是一个对象，解决了之前 ajax 的地狱回调的编程困境
+then 函数的参数有两个函数，通常第二个函数是可选的，是在 promise 内部出错的时候调用的回调函数，
+但是和 catch 的区别是，第二个函数不能捕捉到第一个函数中的报错，但是 catch 可以，所以平时开发中
+针对 promise 的错误捕捉，一般都是使用 catch
+为什么会出现 async 和 await
+其实，虽然 promise 解决了低于回调，但是还是要写长长的链式调用，代码可复性其实也不是很友好，所以 async 和 await
+就是为了解决这个问题的，使用该关键字，可以异步的代码写的像同步的代码一样</p> <ol start="4"><li>宏任务微任务、setTimeout 执行是宏，还是微任务</li></ol> <p>js 的任务分为同步任务和异步任务，代码在执行的时候，先执行同步任务队列，当执行过程中遇到宏任务或者微任务的时候，会将任务
+推入其对应的异步任务队列，当同步任务执行完毕之后，则去逐一执行微任务，微任务执行完毕之后，执行一个宏任务，然后当该宏任务执行完毕之后则继续在微任务列表里面查看有没有新的微任务，有的话先执行微任务，执行完微任务继续执行宏任务</p> <p>同步代码—微任务（要全部执行）—&gt;宏任务（执行一个）—&gt;微任务（全部执行）—&gt;宏任务（执行一个）</p> <ol start="5"><li>React 生命周期</li></ol> <p>目前还没有使用过</p> <ol start="6"><li>useEffect 的作用</li></ol> <p>目前还没有使用过</p> <ol start="7"><li>浏览器的渲染流程</li></ol> <div class="language- extra-class"><pre class="language-text"><code>浏览器的渲染流程可以简单地描述为以下几个步骤：
+
+解析 HTML：浏览器从网络或本地缓存中获取 HTML 文件，并开始解析。解析过程中，浏览器会构建 DOM 树（Document Object Model），将 HTML 标记转化为树形结构的对象。
+
+构建 CSSOM：同时解析 CSS 文件，构建 CSSOM 树（CSS Object Model）。CSSOM 树表示页面中的样式信息，包括选择器、属性和值等。
+
+合成渲染树：将 DOM 树和 CSSOM 树合并，生成渲染树（Render Tree）。渲染树只包含需要显示的元素和其对应的样式信息，不包含隐藏的元素或不可见的元素。
+
+布局计算：根据渲染树的信息，浏览器进行布局计算，确定每个元素在页面中的位置和大小。这个过程也被称为回流（reflow）或布局（layout）。
+
+绘制页面：根据布局计算的结果，浏览器开始绘制页面。它会遍历渲染树，并将每个元素转换为屏幕上的实际像素。这个过程也被称为重绘（repaint）或绘制（paint）。
+
+显示页面：绘制完成后，浏览器将绘制的结果显示在用户的屏幕上，呈现出可见的网页内容。
+
+需要注意的是，以上步骤并不是一次性完成的，而是一个持续的过程。当浏览器接收到新的 HTML、CSS 或 JavaScript 时，可能会触发重新解析、构建渲染树、布局计算和绘制等过程，以更新页面的显示。
+
+此外，为了提高性能，现代浏览器还采取了一些优化措施，如异步加载脚本、懒加载图片、使用缓存等，以加快页面加载和渲染速度。这些优化措施可以减少不必要的网络请求和渲染操作，提升用户体验。
+</code></pre></div><ol start="8"><li>DOM 解析过程中遇到 script 标签会发生什么？</li></ol> <div class="language- extra-class"><pre class="language-text"><code>在 DOM 解析过程中，当遇到 &lt;script&gt; 标签时，浏览器会暂停 DOM 的解析，并开始执行脚本。这是因为脚本可能会对 DOM 结构进行修改，而浏览器希望在执行脚本之前先构建完整的 DOM 树。
+
+具体的处理方式取决于 &lt;script&gt; 标签的属性和位置：
+
+如果 &lt;script&gt; 标签带有 async 属性：浏览器会异步加载并执行脚本，不会阻塞 DOM 的解析过程。脚本的加载和执行与 DOM 解析是并行进行的，脚本执行的时机取决于其加载完成的时间。
+
+如果 &lt;script&gt; 标签带有 defer 属性：浏览器会异步加载脚本，但会在 DOM 解析完成后、DOMContentLoaded 事件触发前按照顺序执行脚本。defer 属性保证了脚本的执行顺序与它们在文档中的顺序一致。
+
+如果 &lt;script&gt; 标签没有 async 和 defer 属性：浏览器会同步加载并执行脚本，此时会阻塞 DOM 的解析过程。即使是外部脚本，浏览器也会等待脚本加载完成并执行后再继续解析 DOM。
+
+需要注意的是，由于脚本的执行可能会对 DOM 进行修改，因此如果脚本在执行过程中修改了 DOM，浏览器可能会停止当前的解析过程，并重新开始解析修改后的 DOM。这种情况下，之前解析的部分可能需要重新解析。
+
+为了避免阻塞 DOM 解析，一般推荐将脚本放在 &lt;body&gt; 标签的末尾，或使用 async 或 defer 属性来异步加载脚本。这样可以保证脚本的加载和执行不会阻塞页面的渲染和用户的交互。
+</code></pre></div><ol start="9"><li>Webpack 的作用、webpack 打包文件名为什么生成 hash(x2)</li> <li>forEach、filter、map 的区别</li></ol> <div class="language- extra-class"><pre class="language-text"><code>forEach 用于遍历数组并执行回调函数，没有返回值；filter 用于根据条件筛选出符合条件的元素，返回一个新数组；map 用于对数组中的每个元素执行操作并返回一个新数组，新数组的元素是操作后的结果。
+</code></pre></div><ol start="11"><li>跨域以及跨域的解决方案</li></ol> <div class="language- extra-class"><pre class="language-text"><code>JSONP（JSON with Padding）：JSONP 是一种利用 &lt;script&gt; 标签可以跨域加载资源的特性来实现跨域请求的方法。通过在请求 URL 中添加一个回调函数的参数，服务端返回的数据会被包裹在该回调函数中，从而实现跨域数据的获取。
+
+CORS（Cross-Origin Resource Sharing）：CORS 是一种现代浏览器支持的跨域解决方案。它通过在服务器端设置响应头来控制是否允许跨域访问。服务器端需要设置 Access-Control-Allow-Origin 头来指定允许访问的源，也可以设置其他的 CORS 相关头来控制请求的方法、头信息等。
+
+代理服务器：可以通过在自己的服务器上设置一个代理，将跨域请求转发到目标服务器上，然后再将响应返回给前端。前端只需要向自己的服务器发起请求，避免了直接跨域访问的问题。
+</code></pre></div><ol start="12"><li>TS 接触过吗？</li></ol> <p>没有</p> <ol start="13"><li>防抖和节流技术在项目中的使用，应用场景</li></ol> <div class="language- extra-class"><pre class="language-text"><code>地图在快速拖动或者使用鼠标滚轮放大缩小的时候，需要频繁的给渲染服务发送请求，导致没必要的数据交互服务，导致操作卡顿，所以
+这里使用了防抖技术，在最后一次拖动或者缩放之后在请求数据
+
+</code></pre></div><ol start="14"><li>如何解决回调地狱问题的？</li></ol> <p>使用 Promise</p> <ol start="15"><li>图片懒加载怎样实现</li></ol> <ul><li>直接使用 elementui 的 el-image 组件，配置上其 lazy 属性即可</li> <li>使用 vue 的 lazyload 插件</li></ul> <ol start="16"><li>怎么用，以及为什么要用 redux</li></ol> <p>目前没使用过</p> <ol start="17"><li>受控组件和非受控组件的区别</li></ol> <p>没有使用过 react</p> <ol start="18"><li>高阶组件</li> <li>html 文件不生产 hash 怎么做缓存（x2）</li></ol> <div class="language- extra-class"><pre class="language-text"><code>如果你的 HTML 文件没有生成哈希，导致无法实现缓存的话，你可以使用以下方法来手动实现缓存：
+
+设置 HTTP 缓存头：在服务器端配置，通过设置适当的 HTTP 缓存头来指示浏览器缓存 HTML 文件。你可以使用 Cache-Control 和 Expires 头字段来控制缓存时间。
+
+</code></pre></div><div class="language-nginx extra-class"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+  <span class="token directive"><span class="token keyword">expires</span> max</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上述示例是针对 Nginx 服务器的配置，它会将响应标记为永久缓存，这样浏览器就会在首次加载后缓存 HTML 文件。</p> <p>使用版本号或查询参数：在引用 HTML 文件的链接中添加一个版本号或查询参数，每次更新 HTML 文件时，更改版本号或查询参数的值。这样做可以确保浏览器会重新加载最新的 HTML 文件。</p> <div class="language- extra-class"><pre class="language-text"><code>```html
+&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css?v=1.0&quot;&gt;
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>当你更新了 HTML 文件时，将版本号或查询参数的值更新为新的值（如 ?v=2.0），这样浏览器就会重新下载并缓存最新的文件。
+
+使用 Service Worker：如果你想要更精细地控制缓存策略，可以使用 Service Worker 技术。Service Worker 是运行在浏览器背后的 JavaScript 脚本，它可以拦截网络请求，并决定是否从缓存中提供响应。你可以使用 Service Worker 来缓存 HTML 文件，并在需要时更新缓存。
+
+以下是一个简单的示例，演示如何使用 Service Worker 缓存和提供 HTML 文件：
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 注册 Service Worker</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&quot;serviceWorker&quot;</span> <span class="token keyword">in</span> navigator<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  navigator<span class="token punctuation">.</span>serviceWorker
+    <span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">&quot;/sw.js&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">registration</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Service Worker 注册成功&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Service Worker 注册失败:&quot;</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 在 Service Worker 中缓存并提供 HTML 文件</span>
+self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;fetch&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  event<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span>
+    caches<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>request<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> response<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> <span class="token function">fetch</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>上述示例代码将注册一个 Service Worker，并在 fetch 事件中缓存并提供 HTML 文件的响应。
+
+通过以上方法，即使 HTML 文件没有生成哈希，你仍然可以实现缓存效果。但请注意，如果你更新了 HTML 文件内容，需要使用适当的方法来通知浏览器更新缓存，以避免用户看到旧的版本。
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>20. 一句话描述 vue、react 与 jquery 开发的区别
+21. vue 的 key 的作用，为什么不能用数组的下标做 key
+
+22. 观察者模式与发布订阅模式的区别
+
+    观察者模式，多用于单个应用内部，没有第三方来实现调度。 定义了对象之间的一对多关系。
+    发布订阅模式是观察者模式的一种变种，发布者和订阅者相互之间不知道彼此的存在，他们通过调度中心联系到彼此。事件名称一直是他们能联系彼此的条件。多应用于将多层透传通信方式扁平化。
+
+23. 函数柯里化的作用---参数复用，延迟执行
+24. 强缓存和协商缓存的区别
+25. 状态码，404 到底是在请求服务器之后，发现没找到资源，服务器返回的 404；还是服务器挂了（500），客户端返回的 404
+
+```css
+&lt;style&gt;
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .center {
+        flex: 1;
+        background-color: seagreen;
+        height: 400px;
+    }
+
+    .left,
+    .right {
+        flex: 0 0 200px;
+        background-color: sienna;
+        height: 400px;
+    }
+&lt;/style&gt;
+</code></pre></div><ol start="28"><li><p>vue2 和 vue3 区别。可从用法到源码都说了一遍。</p> <ul><li>组合式 API</li> <li>组件中支持多根节点</li> <li>支持异步组件</li> <li>响应式原理也发生了变化，vue2 使用的是 Objec.defineProperty,但是 vue3 使用的是 Proxy</li></ul></li> <li><p>vue 实现数据响应。说了下 watch。</p></li></ol> <p>vue2 中使用 Object.defineProperty()方法实现乐响应式，但是该方法有一个局限性，那就是对对象属性的新增和删除
+以及数组的变化是没有办法检测的，所以针对数组，vue2 专门修改了数组中可以改变数组自身的几个方法：push，pop，shift，unshift，splice，sort，reverse，针对对象的属性的增删也是提供了单独的方式去处理</p> <p>但是 vue3 中，使用了 es 最新的 proxy 方法去实现了响应式，该方法就没有上述 vue2 中的问题</p> <ol start="30"><li>说下 watch 和 compute 区别，秒了。</li></ol> <p>computed 擅长处理的场景：一个数据受多个数据影响；watch 擅长处理的场景：一个数据影响多个数据。</p> <ul><li>功能上：computed 是计算属性，watch 是监听一个值的变化，然后执行对应的回调。</li> <li>是否调用缓存：computed 支持缓存，只有依赖数据发生改变,才会重新进行计算;而 watch 不支持缓存，数据变,直接会触发相应的操作。</li> <li>是否调用 return：computed 中的函数必须要用 return 返回，watch 中的函数不是必须要用 return。</li> <li>computed 不支持异步，当 computed 内有异步操作时无效，无法监听数据的变化;而 watch 支持异步。</li> <li>computed 默认第一次加载的时候就开始监听；watch 默认第一次加载不做监听，如果需要第一次加载做监听，添加 immediate 属性，设置为 true（immediate:true）</li></ul> <ol start="31"><li>es6 有哪些新特性，项目中用了。说了七八个。</li></ol> <ul><li>块级作用域</li> <li>箭头函数</li> <li>解构赋值</li> <li>默认参数</li> <li>扩展运算符</li> <li>模板字符串</li> <li>类和模块</li> <li>promise</li></ul> <ol start="32"><li>实现左边固定，右边自适应布局，用 flex 布局怎么实现</li> <li>了解 slot 插槽么？</li></ol> <p>在定义子组件的时候，为父组件使用 solt 标签留坑，插槽位置，允许父组件在使用子组件的可以将自定义的
+标签，组件等传给子组件，插槽有这么几种</p> <ul><li>默认插槽，就是子组件里面只有一个位置，父组件传入的内容默认就放在这个位置</li> <li>具名插槽，就是子组件内部定义了多个插槽的时候，父组件在传入的时候需要通过名称分别对应不同的插槽位置</li> <li>作用域插槽，可以为预留的插槽绑定数据</li></ul> <h3 id="开放"><a href="#开放" class="header-anchor">#</a> 开放</h3> <ol><li>为什么要来前端岗位？</li> <li>从整体的角度来说一下前端技术？(这种开放题反而有点不知道怎么回答)</li> <li>canvas 内部有 10 个元素，知道 10 个元素的左上角坐标和宽高，如何对 10 个元素进行事件监听</li></ol> <div class="language- extra-class"><pre class="language-text"><code>要对 canvas 内的元素进行事件监听，需要借助一些额外的技术手段，因为 canvas 本身并不提供 DOM 元素的结构，无法直接对每个元素进行事件监听。
+
+一种常见的做法是在 canvas 上监听鼠标事件，并通过计算鼠标位置与元素位置的关系来确定是否触发了元素的事件
+</code></pre></div><ol start="4"><li>一个好的模块需要具备哪些方面</li></ol> <div class="language- extra-class"><pre class="language-text"><code>一个好的模块应该具备单一职责、高内聚性、低耦合性、可重用性、易于测试、可扩展性以及良好的文档和注释等特点。这些特点可以帮助提高模块的质量、可维护性和可复用性，从而提升整个系统的开发效率和质量。
+</code></pre></div><ol start="5"><li>如何看待技术与业务的关系</li></ol> <div class="language- extra-class"><pre class="language-text"><code>技术和业务是密不可分的，技术是为业务服务的手段，而业务则是技术的驱动力。在现代企业中，技术已经成为了企业竞争的重要因素之一，技术与业务的关系越来越紧密。
+
+首先，技术是业务的基础。没有技术的支持，业务无法顺利进行。例如，在电商领域，技术的支持是电商平台能够实现高并发、快速响应、安全稳定等特性的关键。而在金融领域，技术的支持是保证交易安全、数据准确、系统稳定的前提。
+
+其次，业务也是技术发展的推动力。业务需求的不断变化和升级，促使技术不断创新和进步。例如，随着人工智能技术的发展，各行各业都在探索如何将 AI 技术应用到业务中，从而提升效率、降低成本、提高用户体验等。
+
+最后，技术和业务的关系是相互促进的。技术的发展为业务提供了更多的可能性和空间，而业务的需求也推动了技术的不断创新和发展。在实际工作中，技术人员需要深入了解业务需求，为业务提供最优的技术方案；而业务人员也需要了解技术的发展趋势和应用场景，为技术提供更多的实践场景和需求。
+
+因此，技术和业务是相互依存、相互促进的关系。只有将二者紧密结合起来，才能够实现企业的长期发展和竞争优势。
+</code></pre></div><ol start="6"><li>自己是技术负责人如果自己觉得方案 A 好，但主管觉得 B 好，最终会上哪套方案</li></ol> <div class="language- extra-class"><pre class="language-text"><code>在这种情况下，作为技术负责人，你可以积极地与主管沟通，解释和阐述你认为方案 A 的优势和价值，并提供相关的技术分析和数据支持。通过充分的沟通和合作，你可以帮助主管更好地理解你的观点，并共同决策最终选择哪个方案。但最终决策权仍然掌握在主管手中，你需要尊重并接受他们的最终决策。
+</code></pre></div><ol start="7"><li>公司相关场景题，大概就是地图上要展示海量数据，发散性思维如何进行优化，前端后端均可</li></ol> <div class="language- extra-class"><pre class="language-text"><code>展示海量数据的地图是一个挑战性的任务，需要考虑如何优化性能和用户体验。以下是一些发散性思维的优化方法：
+
+数据聚合：考虑对数据进行聚合，以减少在地图上展示的数据量。可以使用聚合算法（如网格聚合、热力图等）将相邻的数据点合并为一个代表点，从而减少数据量并保留整体趋势。
+
+渐进式加载：采用渐进式加载的方式，先加载地图的基础信息和部分数据，然后根据用户的操作或视野范围逐步加载更多的数据。这样可以提高地图的响应速度，避免一次性加载大量数据导致的性能问题。
+
+瓦片化技术：将地图切分为多个瓦片，并根据用户的视野范围和缩放级别加载相应的瓦片。这样可以有效减少每次加载的数据量，并提高地图的渲染性能。
+
+数据过滤和筛选：根据用户的需求和关注点，提供数据过滤和筛选的功能，让用户可以根据自己的需求选择展示的数据类型、时间范围、区域等条件，从而减少展示的数据量。
+
+数据可视化技术：使用合适的数据可视化技术，将海量数据以更直观、简洁的方式展示在地图上。比如使用聚类、热力图、密度图等技术来表达数据的分布和趋势，提供更好的用户体验。
+
+前端性能优化：在前端开发中，采用一些性能优化的技术，如图片懒加载、异步加载、缓存等，可以提高地图的加载速度和响应性能。
+
+后端数据处理：对于海量数据，可以考虑在后端进行数据处理和压缩，以减少数据传输和加载的时间。可以采用数据压缩算法、索引技术等来提高数据的存储和检索效率。
+
+这些优化方法可以结合使用，根据具体的需求和场景进行调整和实施。通过合理的数据处理和展示方式，可以提高地图展示海量数据时的性能和用户体验。
+</code></pre></div><h2 id="_2023-10-25-整理"><a href="#_2023-10-25-整理" class="header-anchor">#</a> 2023.10.25 整理</h2> <ol><li>数组常用的 api (es6es5)</li></ol> <div class="language- extra-class"><pre class="language-text"><code>push,pop,shift,unshift,slice,splice,map,some,every,filter,find,findIndex,concat,forEach,sort
+</code></pre></div><ol start="2"><li>BOM 对象有哪些?</li></ol> <div class="language- extra-class"><pre class="language-text"><code>
+Window 对象：代表浏览器窗口，是 BOM 中的顶层对象。它包含了浏览器窗口的所有属性和方法，可以操作和控制浏览器窗口的大小、位置、导航等。
+
+Navigator 对象：提供关于浏览器的信息，如浏览器的名称、版本、用户代理字符串等。通过 Navigator 对象，可以检测浏览器的特性和支持的功能，从而进行相应的处理。
+
+Location 对象：表示当前窗口的 URL 地址，并提供了与 URL 相关的属性和方法。可以使用 Location 对象获取或设置当前页面的 URL，以及进行页面重定向、刷新等操作。
+
+History 对象：用于操作浏览器的历史记录。可以使用 History 对象前进、后退或跳转到指定的历史记录，以及获取当前历史记录的信息。
+
+Screen 对象：表示用户的屏幕信息，如屏幕的宽度、高度、像素密度等。通过 Screen 对象，可以根据屏幕信息进行页面布局和适配。
+
+</code></pre></div><ol start="3"><li>刷新页面的方式</li></ol> <div class="language- extra-class"><pre class="language-text"><code>使用浏览器刷新按钮：浏览器提供了一个刷新按钮，可以手动点击按钮或使用快捷键（如 F5 或 Ctrl+R）来刷新当前页面。 使用
+1、JavaScript 代码刷新：可以使用 JavaScript 提供的
+location.reload()方法来刷新当前页面。该方法会重新加载当前页面，并且不带参数时会跳过缓存直接重新请求服务器资源。
+2、使用meta 标签刷新：可以在 HTML 页面头部添加一个 meta 标签，设置 http-equiv 属性为&quot;refresh&quot;，并指定刷新时间和跳转链接。例如：
+</code></pre></div><div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>refresh<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>5;url=https://www.example.com<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token comment">&lt;!-- 上述代码表示在 5 秒后自动跳转到 https://www.example.com 网址。这种方式需要注意设置合适的刷新时间，避免给用户带来不必要的干扰 --&gt;</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>3、使用 AJAX 技术刷新部分内容：可以使用 AJAX技术向服务器请求数据，并通过 JavaScript更新页面上的部分内容，从而实现局部刷新的效果。这种方式可以提升页面的响应速度和用户体验，但需要注意处理好数据缓存和错误处理等问题。
+
+</code></pre></div><ol start="4"><li>iframe 的顶层对象</li></ol> <div class="language- extra-class"><pre class="language-text"><code>在使用 &lt;iframe&gt; 元素嵌入一个网页时，可以通过 window.top 属性来引用顶层窗口（即包含 &lt;iframe&gt; 的窗口）的全局对象。这个顶层对象提供了访问和操作包含 &lt;iframe&gt; 的窗口的方法和属性。
+
+以下是一些常用的顶层对象属性和方法：
+
+window.top.document：引用顶层窗口的文档对象，可以使用它来获取或修改顶层窗口中的文档内容。
+
+window.top.location：引用顶层窗口的 URL 地址对象，可以使用它来获取或修改顶层窗口的 URL 地址。
+
+window.top.frames：引用顶层窗口中所有的 &lt;iframe&gt; 元素，返回一个类数组对象，可以通过索引或名称来访问各个 &lt;iframe&gt;。
+
+window.top.parent：引用包含当前窗口的父级窗口对象，如果当前窗口没有父级窗口（即顶层窗口），则返回自身。
+
+window.top.postMessage()：用于在顶层窗口和嵌入的 &lt;iframe&gt; 之间进行跨窗口通信。可以通过该方法向顶层窗口发送消息，并在顶层窗口中监听 message 事件来接收消息。
+
+需要注意的是，由于安全性限制，跨域的 &lt;iframe&gt; 之间的访问和通信可能会受到限制。在进行跨域操作时，需要确保目标页面设置了合适的 CORS（跨域资源共享）策略，以允许跨域访问和通信。
+
+总之，通过 window.top 属性可以方便地访问和操作包含 &lt;iframe&gt; 的顶层窗口，从而实现更灵活的交互和通信。
+</code></pre></div><ol start="5"><li>常用的设计模式</li></ol> <div class="language- extra-class"><pre class="language-text"><code>JavaScript 中常用的设计模式有许多，下面列举了一些常见的设计模式：
+
+单例模式（Singleton Pattern）：确保一个类只有一个实例，并提供一个全局访问点来访问该实例。
+
+工厂模式（Factory Pattern）：通过工厂方法创建对象，而不是直接调用构造函数。这样可以隐藏具体对象的创建逻辑，使代码更加灵活和可维护。
+
+观察者模式（Observer Pattern）：定义了一种一对多的依赖关系，当一个对象的状态发生变化时，所有依赖它的对象都会得到通知并自动更新。
+
+发布-订阅模式（Publish-Subscribe Pattern）：类似于观察者模式，但是发布者和订阅者之间没有直接的依赖关系，通过消息通道进行解耦。
+
+原型模式（Prototype Pattern）：通过复制现有对象来创建新对象，避免了使用构造函数创建对象的开销。
+
+适配器模式（Adapter Pattern）：将一个类的接口转换成客户端所期望的另一个接口，从而使原本不兼容的类能够一起工作。
+
+装饰者模式（Decorator Pattern）：动态地给一个对象添加额外的功能，同时又不改变其接口。
+
+策略模式（Strategy Pattern）：定义一系列算法，将每个算法封装起来，并使它们可以互换使用，使得算法可以独立于使用它的客户端而变化。
+
+代理模式（Proxy Pattern）：为一个对象提供一个代理，以控制对该对象的访问。可以在不改变原始对象的情况下，增加额外的操作或限制访问。
+
+MVC 模式（Model-View-Controller Pattern）：将应用程序分为模型（数据）、视图（用户界面）和控制器（处理逻辑）三个部分，实现了代码的分离和模块化。
+
+这些设计模式都有各自的特点和适用场景，可以根据具体的需求选择合适的设计模式来提高代码的可维护性、可扩展性和重用性。同时，也可以将不同的设计模式组合使用，以满足复杂的业务需求。
+</code></pre></div><ol start="6"><li>vue 用到的设计模式</li></ol> <div class="language- extra-class"><pre class="language-text"><code>Vue.js 是一个流行的 JavaScript 前端框架，它在其设计中使用了多种设计模式来提供灵活性和可扩展性。以下是一些常见的设计模式在 Vue.js 中的应用：
+
+MVVM 模式（Model-View-ViewModel）：Vue.js 基于 MVVM 模式，将视图（View）与数据模型（Model）通过 ViewModel 进行双向绑定。这种模式使得数据的变化能够自动反映在视图上，同时用户的操作也能够直接更新数据模型。
+
+观察者模式（Observer Pattern）：Vue.js 使用观察者模式来实现数据的响应式。当数据发生变化时，Vue.js 会自动通知相关的观察者进行更新。这种模式使得组件能够实时地响应数据的变化，从而保持视图与数据的同步。
+
+发布-订阅模式（Pub-Sub Pattern）：Vue.js 中的事件系统就是基于发布-订阅模式实现的。组件可以通过订阅事件来监听特定的行为或状态变化，并在事件被发布时执行相应的逻辑。这种模式使得组件之间的通信更加解耦和灵活。
+
+工厂模式（Factory Pattern）：Vue.js 中的组件实例化过程是通过工厂模式来完成的。Vue 组件可以通过定义组件选项对象来创建组件实例，Vue.js 会根据这些选项来动态地生成对应的组件实例。
+
+策略模式（Strategy Pattern）：Vue.js 的计算属性（Computed Properties）和侦听器（Watchers）功能都使用了策略模式。通过定义不同的策略函数，Vue.js 可以根据需要执行不同的逻辑，从而实现计算属性的缓存和监听数据变化的功能。
+
+装饰者模式（Decorator Pattern）：Vue.js 中的混入（Mixins）功能使用了装饰者模式。通过将一些通用的功能封装成混入对象，并将其混入到组件中，可以实现代码的复用和组件功能的扩展。
+
+这些设计模式的应用使得 Vue.js 框架具有良好的可维护性、可扩展性和可测试性，同时也提供了丰富的功能和灵活的开发方式。
+</code></pre></div><p>7.localStorage 封装的好处？</p> <div class="language- extra-class"><pre class="language-text"><code>封装 localStorage 是一个很常见的做法，它可以带来以下好处：
+
+抽象接口：通过封装 localStorage，我们可以定义一组更高级别的接口，使其更易于使用和理解。这样可以隐藏底层实现细节，提供更简洁、易用的 API，降低了使用者的学习成本。
+
+封装逻辑：封装 localStorage 可以将一些通用的逻辑和功能集中处理，例如数据类型转换、数据验证、过期时间管理等。这样可以避免代码重复，提高代码的可维护性和可扩展性。
+
+错误处理：封装 localStorage 可以统一处理错误情况，例如存储空间不足、存储失败等。我们可以定义错误处理机制，提供友好的错误提示或自动处理策略，增加系统的健壮性。
+
+安全性控制：通过封装 localStorage，我们可以添加一些安全性控制机制，例如数据加密、权限验证等，以保护敏感信息的存储和访问安全。
+
+封装 localStorage 可以解决一些业务场景，例如：
+
+数据持久化：在 Web 应用中，我们通常需要将一些用户配置、状态信息等持久化存储，以便在页面刷新或重新打开时能够恢复之前的状态。
+
+缓存管理：在一些需要频繁读写数据的场景中，使用 localStorage 可以提高性能。通过封装，我们可以实现缓存策略，例如设置缓存过期时间、缓存失效时自动重新获取数据等。
+
+跨页面通信：localStorage 提供了一种跨页面共享数据的机制。通过封装，我们可以实现数据的发布与订阅、跨页面事件的触发与监听，方便不同页面之间的数据交互和通信。
+
+封装 localStorage 的具体实现方式可以根据业务需求和团队偏好来选择，可以是简单的函数封装，也可以是基于类的封装。重要的是要提供简洁、易用的 API，并考虑到错误处理、安全性控制等方面，以提高代码的可维护性和可靠性。
+</code></pre></div><ol start="8"><li>分析一个接口请求慢的原因</li></ol> <div class="language- extra-class"><pre class="language-text"><code>接口请求慢的原因可以有多种可能性，下面列举了一些常见的原因：
+
+网络延迟：网络延迟是导致接口请求慢的主要原因之一。网络延迟可能由于网络拥塞、网络连接质量差、服务器响应时间长等引起。
+
+服务器负载高：如果服务器负载过高，处理请求的能力可能会受到限制，导致接口请求慢。服务器负载高可能是由于并发请求过多、数据库查询复杂、计算密集型任务等原因引起。
+
+数据库查询缓慢：如果接口请求需要进行数据库查询操作，并且查询语句复杂或者缺乏索引，那么数据库查询的性能可能会受到影响，导致接口请求慢。
+
+第三方服务慢：如果接口请求依赖于其他第三方服务（如外部 API、消息队列等），而这些服务的响应时间较长或不稳定，也会导致接口请求慢。
+
+前端渲染耗时：如果接口请求返回的数据需要在前端进行处理和渲染，而前端的处理逻辑较为复杂或者涉及大量数据操作，也会导致接口请求慢。
+
+针对接口请求慢的问题，可以采取以下一些解决方案：
+
+优化网络环境：确保网络连接的稳定性和速度，尽量减少网络延迟。可以通过使用 CDN、优化服务器配置、使用高速网络等方式来改善网络性能。
+
+优化服务器端代码：对于服务器端的代码，可以进行性能分析和优化，例如优化数据库查询语句、增加缓存机制、并发处理请求等，以提高接口的响应速度。
+
+异步处理：对于耗时的操作，可以采用异步处理的方式，将其放入后台线程或者使用消息队列进行处理，从而不影响接口的实时响应。
+
+数据分页和缓存：对于返回大量数据的接口，可以考虑进行分页处理，减少每次请求返回的数据量；同时，可以使用缓存机制，在数据不频繁变动的情况下，直接返回缓存的结果，减少对后端的请求。
+
+前端性能优化：对于前端渲染耗时的问题，可以优化前端代码，减少不必要的计算和操作，使用合适的数据结构和算法，以提高前端渲染的效率。
+
+综上所述，接口请求慢的原因可能是多方面的，需要根据具体情况进行分析和优化。通过优化网络环境、服务器端代码、数据处理和前端渲染等方面的工作，可以提高接口请求的响应速度和用户体验。
+</code></pre></div><ol start="9"><li>一个前端资源多大，你觉得合理，为什么，1m,10m,100m?</li> <li>base64 算法原理，它为什么会使数据量变大，变大了多少(3 个字节变 4 个)</li></ol> <div class="language- extra-class"><pre class="language-text"><code>Base64是一种用于将二进制数据转换为可打印字符的编码方式。它的原理如下：
+
+将输入的二进制数据以每6个比特位为一组进行分割。
+将每个6比特位的组合转换为一个对应的整数值（0-63之间）。
+使用一个固定的字符表，将这些整数值映射为可打印字符。
+Base64编码的字符表通常包含A-Z、a-z、0-9以及两个额外的字符（通常是&quot;+&quot;和&quot;/&quot;）。有时也会使用&quot;=&quot;作为填充字符。
+
+由于Base64编码是将二进制数据转换为可打印字符，因此会导致数据量变大。具体来说，Base64编码后的数据量大约会增加1/3左右。
+
+这是因为原始的二进制数据是以8比特位为单位进行存储和传输的，而Base64编码后，每6比特位的组合被转换为一个字符，相当于每3个字节的数据会被编码为4个字符。
+
+举个例子，假设有一个包含24比特位（3个字节）的二进制数据。在Base64编码中，它将被分割为4个6比特位的组合，然后转换为4个对应的字符。因此，原始的3个字节的数据将被编码为4个字符，数据量增加了1/3。
+
+需要注意的是，Base64编码并不是为了减小数据量，而是为了将二进制数据转换为可打印字符，以便在文本协议中传输或存储，同时保持数据的完整性。如果需要减小数据量，可以考虑使用其他压缩算法，如gzip或zlib。
+</code></pre></div><ol start="11"><li>304 与缓存有关，你觉得什么资源需要缓存，要怎么设置才会返回 304</li></ol> <div class="language- extra-class"><pre class="language-text"><code>304状态码是HTTP协议中的一种响应状态码，表示请求的资源在客户端缓存中有效，无需重新获取。它与缓存相关，用于优化网络性能和减少服务器负载。
+
+以下是一些适合缓存的资源类型：
+
+静态资源：包括CSS文件、JavaScript文件、图像文件等不经常变动的资源，它们可以被长时间缓存在客户端，以减少重复的网络请求。
+
+页面片段：对于动态网页，页面的某些部分可能是不变的，例如页眉、页脚或侧边栏。这些部分可以被缓存，并在每次请求时与动态生成的内容合并。
+
+API响应：如果API返回的数据在一段时间内保持不变，可以将其缓存在客户端，避免重复请求相同的数据。
+
+要设置使服务器返回304状态码，需要满足以下条件：
+
+客户端发送的请求中必须包含If-Modified-Since或If-None-Match等条件请求头。这些请求头用于告知服务器上次请求时的资源版本信息。
+
+服务器接收到请求后，比较资源的版本信息与请求头中提供的信息。如果资源未发生变化，则返回304状态码。
+
+为了正确设置返回304状态码，可以执行以下步骤：
+
+在服务器端配置缓存策略：通过设置响应头中的Cache-Control、Expires或ETag等字段来指定资源的缓存策略。例如，设置Cache-Control: max-age=3600表示资源在客户端缓存有效期为3600秒。
+
+在每次响应中包含适当的缓存验证信息：服务器可以通过设置Last-Modified和ETag等响应头字段来提供资源的版本信息。
+
+在客户端发送请求时，包含适当的条件请求头：客户端可以通过设置If-Modified-Since和If-None-Match等请求头字段来提供上次请求时的资源版本信息。
+
+当客户端发送带有条件请求头的请求时，服务器会根据资源的缓存验证信息判断是否返回304状态码。如果资源未发生变化，则服务器返回304状态码，客户端可以直接使用缓存的资源。
+
+需要注意的是，正确设置缓存策略和条件请求头是保证返回304状态码的关键。具体的设置方式可能因服务器环境和框架而异，可以根据具体情况进行配置。
+</code></pre></div><ol start="12"><li>js 的执行和页面渲染冲突怎么优化性能</li></ol> <div class="language- extra-class"><pre class="language-text"><code>JavaScript的执行和页面渲染是两个并行执行的进程，它们在浏览器中共享同一个线程。当JavaScript执行时间过长时，会阻塞页面的渲染，导致用户体验变差。为了优化性能，可以采取以下措施：
+
+减少JavaScript代码量：通过压缩和合并JavaScript文件，删除不必要的代码，减少JavaScript文件大小，从而减少JavaScript的执行时间。
+
+异步加载JavaScript文件：将JavaScript文件放到页面底部，并使用async或defer属性异步加载，以便在页面渲染完成后再执行JavaScript代码。
+
+分离JavaScript和DOM操作：尽可能将JavaScript代码与DOM操作分离，避免在JavaScript执行时频繁操作DOM，从而减少页面重绘和回流的次数。
+
+使用事件委托：将事件绑定在父元素上，而不是每个子元素上，可以减少事件绑定的次数，从而提高性能。
+
+使用Web Worker：将一些计算密集型的任务放到Web Worker中执行，避免阻塞主线程，从而提高页面渲染的效率。
+</code></pre></div><ol start="13"><li>重绘和回流</li></ol> <div class="language- extra-class"><pre class="language-text"><code>重绘和回流是浏览器渲染过程中的两个概念，它们都会影响页面性能。
+
+重绘是指当元素的外观属性（例如颜色、背景、边框等）发生变化时，浏览器会重新绘制这些元素的外观，但不会影响元素的布局。重绘通常比回流消耗更少的资源，但也会导致页面卡顿和性能下降。
+
+回流是指当元素的几何属性（例如位置、尺寸、布局等）发生变化时，浏览器会重新计算元素的布局，并重新排列其他相关元素的位置。回流会涉及到整个渲染树的重新构建和布局计算，因此比重绘消耗更多的资源，且会导致页面的卡顿和性能下降。
+
+以下是一些常见引起重绘和回流的操作：
+
+修改DOM结构
+修改元素的样式属性（例如width、height、margin、padding等）
+获取元素的尺寸或位置信息（例如offsetWidth、offsetHeight、clientWidth、clientHeight、getBoundingClientRect等）
+改变窗口大小或滚动页面
+为了优化页面性能，可以采取以下措施：
+
+减少DOM操作的次数和频率，尽可能在一次操作中完成多个修改
+避免使用table布局和float属性，这些布局方式会触发大量的回流
+使用CSS3动画和transform属性来代替JavaScript动画，可以利用浏览器的硬件加速，减少重绘和回流的次数
+使用requestAnimationFrame方法来执行JavaScript动画，可以使动画更加流畅，并避免阻塞主线程
+避免频繁获取元素的尺寸和位置信息，可以将这些信息缓存起来，避免重复计算
+通过以上措施，可以有效地减少页面的重绘和回流，提高页面的性能和用户体验。
+</code></pre></div><ol start="14"><li>有哪些 api 会引起重排（回流）重绘，怎么优化</li></ol> <div class="language- extra-class"><pre class="language-text"><code>当DOM元素的几何属性或样式属性发生变化时，浏览器会进行重排和重绘。以下是一些常见的引起重排和重绘的API：
+
+修改DOM结构：添加、删除、移动DOM元素等操作会引起重排。
+
+修改元素尺寸：修改元素的宽度、高度、边距、内边距等尺寸属性会引起重排。
+
+修改元素位置：修改元素的定位属性、左右上下偏移量等位置属性会引起重排。
+
+修改元素可见性：修改元素的display、visibility等属性会引起重排。
+
+修改字体样式：修改元素的字体大小、字体颜色、字体类型等样式属性会引起重绘。
+
+修改背景样式：修改元素的背景颜色、背景图片等样式属性会引起重绘。
+
+为了优化页面性能，可以采取以下措施：
+
+减少重排和重绘：避免频繁修改DOM结构和样式属性，尽可能在一次操作中完成多个修改。
+
+批量修改DOM：使用文档碎片或虚拟DOM等技术，将多个DOM操作合并成一个批量操作，减少重排的次数。
+
+使用CSS动画：使用CSS动画代替JavaScript动画，可以利用浏览器的硬件加速，减少重排和重绘的次数。
+
+使用transform和opacity属性：使用transform和opacity属性来修改元素的位置和可见性，可以避免引起重排。
+
+使用will-change属性：使用will-change属性来预先告知浏览器哪些元素将要被修改，可以优化重排和重绘的性能。
+
+使用requestAnimationFrame方法：使用requestAnimationFrame方法来执行JavaScript动画，可以使动画更加流畅，并避免阻塞主线程。
+
+通过以上措施，可以有效地减少页面的重排和重绘，提高页面的性能和用户体验。
+</code></pre></div><ol start="15"><li>不用 promise，实现第一个，第二个任务完成后，才执行第三个任务</li></ol> <div class="language- extra-class"><pre class="language-text"><code>如果你不想使用Promise，你可以使用回调函数来实现第一个和第二个任务完成后才执行第三个任务的逻辑。下面是一个示例代码：
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>javascript<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">task1</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 第一个任务逻辑</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Task 1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 模拟异步操作</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Task 1 completed&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 执行回调函数</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">task2</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 第二个任务逻辑</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Task 2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 模拟异步操作</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Task 2 completed&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 执行回调函数</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">task3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 第三个任务逻辑</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Task 3&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 调用任务函数</span>
+<span class="token function">task1</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">task2</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">task3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 在第二个任务完成后执行第三个任务</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>在上述代码中，task1和task2都接受一个回调函数作为参数，在任务完成后调用该回调函数。在调用任务函数时，通过嵌套回调函数的方式，确保第一个任务和第二个任务按顺序执行，并在第二个任务完成后执行第三个任务。
+
+请注意，使用嵌套回调函数会导致代码嵌套层级增加，可读性和维护性较差。这也是为什么Promise被广泛使用的原因之一，它可以更优雅地处理异步操作和任务依赖关系。
+</code></pre></div><ol start="16"><li>用发布订阅实现上个功能，前俩任务会同时派发吗，为什么</li></ol> <div class="language- extra-class"><pre class="language-text"><code>使用发布订阅模式实现前两个任务完成后再执行第三个任务，前两个任务会同时派发，因为在发布订阅模式中，发布者和订阅者之间是松耦合的，发布者只需要向订阅者发送消息，而不需要知道订阅者的具体实现细节。
+
+下面是一个使用发布订阅模式实现前两个任务完成后再执行第三个任务的示例代码：
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>javascript<span class="token punctuation">;</span>
+<span class="token keyword">const</span> eventEmitter <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">events</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">on</span><span class="token punctuation">(</span><span class="token parameter">eventName<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>events<span class="token punctuation">[</span>eventName<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>events<span class="token punctuation">[</span>eventName<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>events<span class="token punctuation">[</span>eventName<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">emit</span><span class="token punctuation">(</span><span class="token parameter">eventName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>events<span class="token punctuation">[</span>eventName<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>events<span class="token punctuation">[</span>eventName<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">callback</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">task1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 第一个任务逻辑</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Task 1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 模拟异步操作</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Task 1 completed&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    eventEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">&quot;task1Completed&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 发布任务1完成事件</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">task2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 第二个任务逻辑</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Task 2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 模拟异步操作</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Task 2 completed&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    eventEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">&quot;task2Completed&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 发布任务2完成事件</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">task3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 第三个任务逻辑</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Task 3&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 订阅任务1完成事件</span>
+eventEmitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&quot;task1Completed&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">task3IfTasks1And2Completed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 订阅任务2完成事件</span>
+eventEmitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&quot;task2Completed&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">task3IfTasks1And2Completed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">task3IfTasks1And2Completed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 判断前两个任务是否都已经完成</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>eventEmitter<span class="token punctuation">.</span>events<span class="token punctuation">[</span><span class="token string">&quot;task1Completed&quot;</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> eventEmitter<span class="token punctuation">.</span>events<span class="token punctuation">[</span><span class="token string">&quot;task2Completed&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">task3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 执行第三个任务</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 调用任务函数</span>
+<span class="token function">task1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">task2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>在上述代码中，我们定义了一个eventEmitter对象，用于实现发布订阅模式。当任务1和任务2完成时，分别向eventEmitter对象发布task1Completed和task2Completed事件。同时，我们在执行任务1和任务2之前，通过调用task3IfTasks1And2Completed函数来订阅这两个事件，判断前两个任务是否都已经完成，如果是，则执行第三个任务。
+
+由于发布订阅模式中的发布者和订阅者之间是松耦合的，因此在任务1和任务2完成后，它们会同时向eventEmitter对象发布事件，而不需要等待对方完成。因此，在使用发布订阅模式实现前两个任务完成后再执行第三个任务时，前两个任务会同时派发。
+</code></pre></div><ol start="17"><li>vue2 兼容低版本 ie8 的策略，polify</li></ol> <div class="language- extra-class"><pre class="language-text"><code>Vue 2.x 官方只支持兼容到 IE9 及以上版本，不提供对 IE8 的官方支持。这是因为 IE8 在 JavaScript 和 CSS 的支持上存在很多限制和缺陷，与 Vue 的现代特性不兼容。
+
+然而，如果你确实需要在 IE8 中使用 Vue 2，并且不能升级到 Vue 3（Vue 3 不再支持 IE11 以下的浏览器），你可以尝试使用一些第三方库或者插件来实现部分兼容性。以下是一些可能的策略：
+
+使用 Babel 转译：通过使用 Babel 将 Vue 2 代码转译为 ES5 语法，以确保在 IE8 中能够正常运行。你可以配置 Babel 的 preset-env 插件来针对 IE8 进行特定的转译。
+
+使用 polyfill 库：引入一些 polyfill 库来填充 IE8 缺失的功能和 API。例如，可以使用 es5-shim 和 es6-promise 等库来提供一些 ES5 和 Promise 的支持。
+
+使用适配插件：有一些针对 Vue 2 的适配插件，可以帮助解决在 IE8 中的兼容性问题。例如，vue-latest-compiler 可以用于在 IE8 中编译 Vue 模板，vue-class-component 可以用于支持类组件语法。
+
+请注意，尽管上述策略可能帮助你在 IE8 中运行 Vue 2，但由于 IE8 的限制，可能会导致性能下降、部分功能不可用或出现其他兼容性问题。因此，在决定在 IE8 中使用 Vue 2 之前，请仔细评估项目需求和用户群体，并确保明确了解可能遇到的问题和限制。另外，建议优先考虑升级到支持现代浏览器的 Vue 3，以获得更好的性能和开发体验。
+</code></pre></div><ol start="18"><li>ie8 浏览器是 es3 还是 es5</li></ol> <div class="language- extra-class"><pre class="language-text"><code>IE8 浏览器使用的是 ECMAScript 3（ES3）规范，而不是 ECMAScript 5（ES5）规范。ES3 是在1999年发布的，它是 JavaScript 的第一个标准化版本，因此它缺少一些现代 JavaScript 的特性和语法糖，例如 let 和 const 声明、箭头函数、模板字符串等。
+
+ES5 是在2009年发布的，它是 ES3 的升级版本，增加了很多新特性，例如严格模式、数组方法、JSON 对象等。然而，IE8 并没有完全支持 ES5 的所有特性，例如 Function.prototype.bind() 方法、Object.create() 方法等。
+
+需要注意的是，ES6（也称为 ECMAScript 2015）及之后的版本都不支持 IE8 浏览器，因为这些版本引入了很多新的语法和特性，IE8 不支持这些新特性。如果需要在 IE8 中运行现代 JavaScript 代码，可以使用 Babel 等工具将代码转译为 ES3 或者使用 polyfill 库来填充缺失的功能。
+</code></pre></div><ol start="19"><li>发布订阅模式和观察者模式的区别</li></ol> <div class="language- extra-class"><pre class="language-text"><code>发布订阅模式（Publish/Subscribe Pattern）和观察者模式（Observer Pattern）是两种常见的设计模式，它们都用于解耦事件的生产者和消费者，但在实现方式和使用方式上有一些区别。
+
+主要区别如下：
+
+关注点不同：在观察者模式中，观察者直接订阅主题对象，主题对象负责通知所有观察者。而在发布订阅模式中，发布者和订阅者之间通过一个消息代理（或称为事件总线）进行通信，发布者将消息发送到代理，然后代理将消息传递给所有订阅了该消息的订阅者。
+
+耦合度不同：在观察者模式中，观察者和主题对象之间通常是紧密耦合的，观察者需要直接访问主题对象的状态。而在发布订阅模式中，发布者和订阅者之间是松散耦合的，它们并不直接知道彼此的存在，而是通过消息代理进行通信。
+
+灵活性不同：发布订阅模式相对于观察者模式更加灵活。在发布订阅模式中，可以有多个发布者和多个订阅者，它们之间的关系是动态的，可以随时添加或移除发布者和订阅者。而观察者模式中，通常是一个主题对象和多个观察者之间的一对多关系。
+
+综上所述，观察者模式更适合在单一主题对象和多个紧密耦合的观察者之间建立联系，而发布订阅模式更适合在多个发布者和多个订阅者之间建立松散耦合的联系，并通过消息代理进行通信。选择使用哪种模式取决于具体的应用场景和需求。
+</code></pre></div><ol start="20"><li>接口的六大设计原则(单一职责原则，里式替换原则，依赖倒置原则，接口隔离原则，迪米特法则,开闭原则)</li> <li>谈一谈对 bff 中间层的理解</li> <li>谈谈面向对象，抽象能力，在编程中的影响</li></ol> <div class="language- extra-class"><pre class="language-text"><code>面向对象编程（Object-Oriented Programming，简称OOP）是一种编程范式，它以对象作为程序的基本单元，通过封装、继承和多态等机制来组织和管理代码。在面向对象编程中，抽象能力是一个重要的概念，它指的是将问题领域的实体和行为进行抽象，提取出共性的特征和功能，并通过类和对象的方式进行表示和使用。
+
+抽象能力在编程中的影响主要体现在以下几个方面：
+
+模块化和可复用性：通过抽象能力，我们可以将问题领域的实体和行为进行抽象，将其封装成类和对象，形成独立的模块。这样做可以提高代码的可复用性，可以在不同的场景中重复使用已经定义好的类和对象，减少代码的冗余性，提高开发效率。
+
+封装和信息隐藏：抽象能力使得我们可以将类的内部数据和实现细节进行封装，只暴露必要的接口给外部使用。这样做可以隐藏实现的细节，提供更加清晰的接口，降低了代码的耦合度，增强了代码的可维护性和可扩展性。
+
+继承和多态：抽象能力使得我们可以通过继承来建立类之间的层次关系，实现代码的重用和扩展。子类可以继承父类的属性和方法，并且可以根据需要进行修改和扩展。多态则允许不同的对象以相同的方式进行操作，提高了代码的灵活性和可扩展性。
+
+代码的可读性和可理解性：抽象能力使得代码更加接近问题领域的描述，提高了代码的可读性和可理解性。通过使用类和对象的方式，我们可以将问题的实体和行为直观地表示出来，使得代码更加符合人类思维的方式，降低了理解和维护代码的难度。
+
+总的来说，抽象能力在面向对象编程中起到了至关重要的作用。它帮助我们将复杂的问题领域进行抽象，提取出共性的特征和功能，并通过类和对象的方式进行表示和使用。通过封装、继承和多态等机制，抽象能力提高了代码的模块化和可复用性，降低了代码的耦合度，增强了代码的可维护性和可扩展性，提高了代码的可读性和可理解性。因此，在编程中，良好的抽象能力是开发高质量、可维护和可扩展软件的重要基础。
+</code></pre></div><ol start="23"><li>你觉得高级前端怎么来体现“高级”，高级和中级的区别</li> <li>10 堆硬币，正常 10g 一个，有一堆有问题，只有 9g，现在有天平和电子秤可以用，找出有问题的那
+堆硬币</li></ol> <div class="language- extra-class"><pre class="language-text"><code>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/3/2023, 11:24:16 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/interview/vue/面试题汇总.html" class="prev">
+        面试题汇总
+      </a></span> <span class="next"><a href="/interview/算法/算法.html">
+        算法
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bf842d89.js" defer></script><script src="/assets/js/2.853c7517.js" defer></script><script src="/assets/js/32.8ad120c4.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>变量提升（需彻底理解） | 香蕉，你个卟啦啦</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo/bnn.png">
+    <meta name="description" content="不积跬步无以至千里">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.bf842d89.js" as="script"><link rel="preload" href="/assets/js/2.853c7517.js" as="script"><link rel="preload" href="/assets/js/20.7675f687.js" as="script"><link rel="prefetch" href="/assets/js/10.c77c7da3.js"><link rel="prefetch" href="/assets/js/11.c21b8900.js"><link rel="prefetch" href="/assets/js/12.194adaf0.js"><link rel="prefetch" href="/assets/js/13.47483d40.js"><link rel="prefetch" href="/assets/js/14.45582356.js"><link rel="prefetch" href="/assets/js/15.d2b26bb3.js"><link rel="prefetch" href="/assets/js/16.770f539f.js"><link rel="prefetch" href="/assets/js/17.fa5a4f12.js"><link rel="prefetch" href="/assets/js/18.28e3d1a3.js"><link rel="prefetch" href="/assets/js/19.b1e97010.js"><link rel="prefetch" href="/assets/js/21.eedf34a9.js"><link rel="prefetch" href="/assets/js/22.c6326021.js"><link rel="prefetch" href="/assets/js/23.99d97383.js"><link rel="prefetch" href="/assets/js/24.c075f0e3.js"><link rel="prefetch" href="/assets/js/25.672f6b5f.js"><link rel="prefetch" href="/assets/js/26.ec98cb7f.js"><link rel="prefetch" href="/assets/js/27.d44ded3d.js"><link rel="prefetch" href="/assets/js/28.ee530aa5.js"><link rel="prefetch" href="/assets/js/29.0b9c2479.js"><link rel="prefetch" href="/assets/js/3.5425d4ff.js"><link rel="prefetch" href="/assets/js/30.a3dd0d6e.js"><link rel="prefetch" href="/assets/js/31.eacd6560.js"><link rel="prefetch" href="/assets/js/32.8ad120c4.js"><link rel="prefetch" href="/assets/js/33.6c22e33e.js"><link rel="prefetch" href="/assets/js/34.1b5f5f91.js"><link rel="prefetch" href="/assets/js/35.eb69f99c.js"><link rel="prefetch" href="/assets/js/36.0a2c52f0.js"><link rel="prefetch" href="/assets/js/37.726ef05f.js"><link rel="prefetch" href="/assets/js/38.d8814860.js"><link rel="prefetch" href="/assets/js/39.203d9c41.js"><link rel="prefetch" href="/assets/js/4.7b294a7a.js"><link rel="prefetch" href="/assets/js/40.8710d216.js"><link rel="prefetch" href="/assets/js/41.f254c4d9.js"><link rel="prefetch" href="/assets/js/42.4cfa1228.js"><link rel="prefetch" href="/assets/js/43.e78bcbda.js"><link rel="prefetch" href="/assets/js/44.399fddf9.js"><link rel="prefetch" href="/assets/js/45.fc87e001.js"><link rel="prefetch" href="/assets/js/46.1c8e1956.js"><link rel="prefetch" href="/assets/js/47.8b061c25.js"><link rel="prefetch" href="/assets/js/48.b21461e5.js"><link rel="prefetch" href="/assets/js/49.996bc9c0.js"><link rel="prefetch" href="/assets/js/5.1995693d.js"><link rel="prefetch" href="/assets/js/50.7f385b39.js"><link rel="prefetch" href="/assets/js/51.5bd5394b.js"><link rel="prefetch" href="/assets/js/52.3b13fd15.js"><link rel="prefetch" href="/assets/js/53.86fe9479.js"><link rel="prefetch" href="/assets/js/54.2e56a9e6.js"><link rel="prefetch" href="/assets/js/55.5e2964e6.js"><link rel="prefetch" href="/assets/js/56.a9d5fa0a.js"><link rel="prefetch" href="/assets/js/57.e50cab16.js"><link rel="prefetch" href="/assets/js/58.cefd7071.js"><link rel="prefetch" href="/assets/js/6.8381d72e.js"><link rel="prefetch" href="/assets/js/7.b0d7b2eb.js"><link rel="prefetch" href="/assets/js/8.4a0ff87e.js"><link rel="prefetch" href="/assets/js/9.0c359db3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo/bnn.png" alt="香蕉，你个卟啦啦" class="logo"> <span class="site-name can-hide">香蕉，你个卟啦啦</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础语言" class="dropdown-title"><span class="title">基础语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础语言" class="mobile-dropdown-title"><span class="title">基础语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HTML
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗❗HTML基础知识学习
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗❗HTML编写规则和语义化写法
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗❗表单和验证
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗公约和最佳时间方法
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  SEO基础知识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          CSS
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/css/chinese/" class="nav-link">
+  CSS基础知识学习
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  页面切图和布局实现
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  页面响应式布局设计
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  CSS预处理语言
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  CSS相关框架
+</a></li><li class="dropdown-subitem"><a href="/css/flex.html" class="nav-link">
+  Flex
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JavaScript
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/js/basis/JavaScript数组中的slice方法和aplice方法的区别.html" class="nav-link">
+  JavaScript基础语法和知识
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  使用Javascript操作DOM元素
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Ajax异步请求相关知识学习
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  ES6以上版本的Javascript
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Javascript语法糖
+</a></li></ul></li><li class="dropdown-item"><h4>
+          TypeScript
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  入门
+</a></li><li class="dropdown-subitem"><a href="/ts/ts在react中的使用.html" class="nav-link">
+  在react中的使用
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="浏览器脚本语言" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="浏览器脚本语言" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          React.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/foxglove.html" class="nav-link">
+  Foxglove面板扩展
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vue/初识vue.html" class="nav-link">
+  初识vue
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue3.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vue3/customRef.html" class="nav-link">
+  customRef
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Angular
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Angular
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="浏览器脚本语言" class="dropdown-title"><span class="title">GIS</span> <span class="arrow down"></span></button> <button type="button" aria-label="浏览器脚本语言" class="mobile-dropdown-title"><span class="title">GIS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          开源库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webgis/turf/turf之计算两个polygon的重叠部分.html" class="nav-link">
+  turf
+</a></li><li class="dropdown-subitem"><a href="/webgis/leaflet/" class="nav-link">
+  leaflet
+</a></li><li class="dropdown-subitem"><a href="/webgis/cesium/局部坐标系使用.html" class="nav-link">
+  cesium
+</a></li></ul></li><li class="dropdown-item"><h4>
+          地图学知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webgis/" class="nav-link">
+  参考系
+</a></li><li class="dropdown-subitem"><a href="/webgis/node/lineOverlap.html" class="nav-link">
+  几何运算
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="三维开发" class="dropdown-title"><span class="title">三维开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="三维开发" class="mobile-dropdown-title"><span class="title">三维开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          三维引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/ZuPerfect/ThreeJsDemo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  three.js
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/webgis/cesium/局部坐标系使用.html" class="nav-link">
+  cesium.js
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="网络知识" class="dropdown-title"><span class="title">网络知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="网络知识" class="mobile-dropdown-title"><span class="title">网络知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  ❗❗网络工作原理
+</a></li><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  ❗❗什么是HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  ❗❗浏览器及工作方式
+</a></li><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  ❗DNS及其工作原理
+</a></li><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  ❗❗域名相关知识
+</a></li><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  云服务相关知识
+</a></li><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  网络安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="构建工具" class="dropdown-title"><span class="title">构建工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="构建工具" class="mobile-dropdown-title"><span class="title">构建工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          任务执行命令
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  npm script
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Gulp
+</a></li></ul></li><li class="dropdown-item"><h4>
+          打包工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  vite
+</a></li></ul></li><li class="dropdown-item"><h4>
+          代码格式化工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Prettier
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Eslint
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="浏览器脚本语言" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="浏览器脚本语言" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          图形化编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Cocos Creator
+</a></li></ul></li><li class="dropdown-item"><h4>
+          静态站点生成器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/staticSide/index.html" class="nav-link">
+  Vuepress
+</a></li></ul></li><li class="dropdown-item"><h4>
+          移动APP开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  React Native
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  UniApp
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Flutter
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  lonic
+</a></li></ul></li><li class="dropdown-item"><h4>
+          桌面应用开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Electron
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/language/" class="nav-link">
+  服务端渲染
+</a></li><li class="dropdown-item"><h4>
+          包管理工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  yarn
+</a></li></ul></li><li class="dropdown-item"><h4>
+          版本控制
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/git/command.html" class="nav-link">
+  git
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  svn
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/interview/js/JS基础速记.html" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/vscode/setting.html" class="nav-link">
+  VSCode
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础语言" class="dropdown-title"><span class="title">基础语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础语言" class="mobile-dropdown-title"><span class="title">基础语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          HTML
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗❗HTML基础知识学习
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗❗HTML编写规则和语义化写法
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗❗表单和验证
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  ❗公约和最佳时间方法
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  SEO基础知识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          CSS
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/css/chinese/" class="nav-link">
+  CSS基础知识学习
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  页面切图和布局实现
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  页面响应式布局设计
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  CSS预处理语言
+</a></li><li class="dropdown-subitem"><a href="/css/" class="nav-link">
+  CSS相关框架
+</a></li><li class="dropdown-subitem"><a href="/css/flex.html" class="nav-link">
+  Flex
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JavaScript
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/js/basis/JavaScript数组中的slice方法和aplice方法的区别.html" class="nav-link">
+  JavaScript基础语法和知识
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  使用Javascript操作DOM元素
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Ajax异步请求相关知识学习
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  ES6以上版本的Javascript
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Javascript语法糖
+</a></li></ul></li><li class="dropdown-item"><h4>
+          TypeScript
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  入门
+</a></li><li class="dropdown-subitem"><a href="/ts/ts在react中的使用.html" class="nav-link">
+  在react中的使用
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="浏览器脚本语言" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="浏览器脚本语言" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          React.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/react/foxglove.html" class="nav-link">
+  Foxglove面板扩展
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vue/初识vue.html" class="nav-link">
+  初识vue
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue3.js
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/vue3/customRef.html" class="nav-link">
+  customRef
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Angular
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Angular
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="浏览器脚本语言" class="dropdown-title"><span class="title">GIS</span> <span class="arrow down"></span></button> <button type="button" aria-label="浏览器脚本语言" class="mobile-dropdown-title"><span class="title">GIS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          开源库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webgis/turf/turf之计算两个polygon的重叠部分.html" class="nav-link">
+  turf
+</a></li><li class="dropdown-subitem"><a href="/webgis/leaflet/" class="nav-link">
+  leaflet
+</a></li><li class="dropdown-subitem"><a href="/webgis/cesium/局部坐标系使用.html" class="nav-link">
+  cesium
+</a></li></ul></li><li class="dropdown-item"><h4>
+          地图学知识
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webgis/" class="nav-link">
+  参考系
+</a></li><li class="dropdown-subitem"><a href="/webgis/node/lineOverlap.html" class="nav-link">
+  几何运算
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="三维开发" class="dropdown-title"><span class="title">三维开发</span> <span class="arrow down"></span></button> <button type="button" aria-label="三维开发" class="mobile-dropdown-title"><span class="title">三维开发</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          三维引擎
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/ZuPerfect/ThreeJsDemo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  three.js
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/webgis/cesium/局部坐标系使用.html" class="nav-link">
+  cesium.js
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="网络知识" class="dropdown-title"><span class="title">网络知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="网络知识" class="mobile-dropdown-title"><span class="title">网络知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  ❗❗网络工作原理
+</a></li><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  ❗❗什么是HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  ❗❗浏览器及工作方式
+</a></li><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  ❗DNS及其工作原理
+</a></li><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  ❗❗域名相关知识
+</a></li><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  云服务相关知识
+</a></li><li class="dropdown-item"><!----> <a href="/interview/js/.html" class="nav-link">
+  网络安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="构建工具" class="dropdown-title"><span class="title">构建工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="构建工具" class="mobile-dropdown-title"><span class="title">构建工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          任务执行命令
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  npm script
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Gulp
+</a></li></ul></li><li class="dropdown-item"><h4>
+          打包工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  vite
+</a></li></ul></li><li class="dropdown-item"><h4>
+          代码格式化工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Prettier
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Eslint
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="浏览器脚本语言" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="浏览器脚本语言" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          图形化编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Cocos Creator
+</a></li></ul></li><li class="dropdown-item"><h4>
+          静态站点生成器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/staticSide/index.html" class="nav-link">
+  Vuepress
+</a></li></ul></li><li class="dropdown-item"><h4>
+          移动APP开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  React Native
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  UniApp
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Flutter
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  lonic
+</a></li></ul></li><li class="dropdown-item"><h4>
+          桌面应用开发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  Electron
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/language/" class="nav-link">
+  服务端渲染
+</a></li><li class="dropdown-item"><h4>
+          包管理工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  yarn
+</a></li></ul></li><li class="dropdown-item"><h4>
+          版本控制
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/git/command.html" class="nav-link">
+  git
+</a></li><li class="dropdown-subitem"><a href="/interview/js/.html" class="nav-link">
+  svn
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/interview/js/JS基础速记.html" class="nav-link">
+  面试
+</a></div><div class="nav-item"><a href="/vscode/setting.html" class="nav-link">
+  VSCode
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/interview/js/JS基础速记.html" class="sidebar-link">JS基础速记</a></li><li><a href="/interview/js/关于堆栈内存的几道面试题.html" class="sidebar-link">关于堆栈内存的几道面试题</a></li><li><a href="/interview/js/关于闭包的几道面试题.html" class="sidebar-link">关于闭包的几道面试题</a></li><li><a href="/interview/js/关于对象的深浅克隆.html" class="sidebar-link">关于对象(数组)的深浅克隆</a></li><li><a href="/interview/js/一道面向对象的面试题-阿里.html" class="active sidebar-link">一道面向对象的面试题-阿里</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/interview/js/一道面向对象的面试题-阿里.html#解析" class="sidebar-link">解析:</a></li><li class="sidebar-sub-header"><a href="/interview/js/一道面向对象的面试题-阿里.html#咱们继续-拖延症得治-ง-•-•-ง" class="sidebar-link">咱们继续（拖延症得治！！）(ง •_•)ง：</a></li></ul></li><li><a href="/interview/js/一道关于JS微任务和宏任务的面试题-头条.html" class="sidebar-link">一道关于微任务和宏任务的面试题</a></li><li><a href="/interview/js/关于==的一道面试题.html" class="sidebar-link">关于==的一道面试题</a></li><li><a href="/interview/js/vue的双向数据绑定.html" class="sidebar-link">vue的双向数据绑定</a></li><li><a href="/interview/js/JS原型链.html" class="sidebar-link">原型链</a></li><li><a href="/interview/js/关于JS中的继承.html" class="sidebar-link">关于JS中的继承</a></li><li><a href="/interview/js/关于JS防抖.html" class="sidebar-link">关于JS防抖</a></li><li><a href="/interview/js/JS函数柯里化面试题.html" class="sidebar-link">JS函数柯里化面试题</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>题库</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>算法</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="变量提升-需彻底理解"><a href="#变量提升-需彻底理解" class="header-anchor">#</a> 变量提升（需彻底理解）</h1> <p><em><strong>在当前作用域下（在当前的执行上下文下），在所有JS代码执行之前，把所有带var和所有带function关键字的提前的声明（创建一个变量）或者定义（给一个变量赋值）</strong></em></p> <p>带var的值***提前声明***，</p> <p>带function的***提前声明+定义***。</p> <p>贴段代码帮助我们理解这个概念：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> <span class="token function-variable function">getName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//输出4</span>
+</code></pre></div><p>为什么这里的getName()输出的是4呢❓下面我们分两个阶段分析😊：</p> <p><strong>1、代码执行之前：</strong> 处理带有var和function关键字的语句，流程如下：</p> <ol><li>var的提前声明，则定义了一个叫getName的变量，***<u>但是不赋值，因为这是代码执行之前！</u>***</li> <li>function的提前声明+定义，则定义了一个叫getName的变量，但是发现getName变量已经被定义，那么只是将一个方法赋给了它。此时getName=fuc=&gt;5</li></ol> <p><strong>2、代码执行时：</strong> 给getName复制，此时getName=fuc=&gt;4</p> <h1 id="理解完上面这个概念之后-我们再看下面这道题"><a href="#理解完上面这个概念之后-我们再看下面这道题" class="header-anchor">#</a> 理解完上面这个概念之后，我们再看下面这道题</h1> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token function-variable function">getName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Foo<span class="token punctuation">.</span><span class="token function-variable function">getName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Foo</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> <span class="token function-variable function">getName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Foo<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+<span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 4</span>
+<span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+<span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+<span class="token keyword">new</span> <span class="token class-name">Foo<span class="token punctuation">.</span>getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+<span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span>
+<span class="token keyword">new</span> <span class="token class-name">new</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span>
+</code></pre></div><h2 id="解析"><a href="#解析" class="header-anchor">#</a> 解析:</h2> <p>明天再写吧.....头疼😫</p> <p>和老友叙旧2个多小时，为了兄弟们的终身大事，我操碎了心😂！这部分明天周六补上！</p> <p>周六早上起床真的太难了！！！</p> <h2 id="咱们继续-拖延症得治-ง-•-•-ง"><a href="#咱们继续-拖延症得治-ง-•-•-ง" class="header-anchor">#</a> 咱们继续（拖延症得治！！）(ง •_•)ง：</h2> <p>根据上面的变量提升的概念，我们知道在代码运行之前是***变量提升***。</p> <p><strong>1、所以第一步（变量提升）：</strong> 寻找function和var关键字的代码</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 第一个function Foo() { ... }，function关键字，声明+定义</span>
+Foo <span class="token operator">=</span> <span class="token constant">AAAFFFOOO</span>  <span class="token comment">// 这里的AAAFFFOOO假设是Function对象在堆内存中的引用地址</span>
+</code></pre></div><p>当前内存图：
+<img src="/img/FooStep1.png" alt="方法执行图" title="FooStep1"></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 第一个var getName = ... ,var关键字只声明</span>
+getName <span class="token operator">=</span> <span class="token keyword">undefined</span> <span class="token comment">// 再次再强调一遍，var只声明，不定义，所以此时getName的值是undefined</span>
+</code></pre></div><p>当前内存图：
+<img src="/img/FooStep2.png" alt="方法执行图" title="FooStep2"></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 第二个function getName() { ... }，function关键字，声明+定义。但是发现getName变量已经在上一步被声明，所以只需要定义就行，即赋值即可</span>
+<span class="token function-variable function">getName</span> <span class="token operator">=</span> <span class="token parameter">func</span><span class="token operator">=&gt;</span><span class="token number">5</span> <span class="token comment">// 这里是伪代码，func=&gt;5表示输出5的那个方法在堆内存中的引用地址，后续将全部按照这种写法</span>
+</code></pre></div><p>至此，变量提升完毕！我们可以看到的是，目前***全局的getName指向的是func=&gt;5***</p> <p>当前内存图：
+<img src="/img/FooStep3.png" alt="方法执行图" title="FooStep3"></p> <p><strong>2、接下来第二步（代码执行）：</strong> 我们一句一句来看</p> <p><em><strong>&lt;第1句 /&gt;</strong></em></p> <hr> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token function-variable function">getName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>变量提升阶段已完成，跳过，当前内存图如下：
+<img src="/img/FooStep4.png" alt="方法执行图" title="FooStep4"></p> <p><em><strong>&lt;第2句 /&gt;</strong></em></p> <hr> <div class="language-js extra-class"><pre class="language-js"><code>Foo<span class="token punctuation">.</span><span class="token function-variable function">getName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>为Foo添加属性getName，该属性也是一个引用类型，当前内存图如下：
+<img src="/img/FooStep5.png" alt="方法执行图" title="FooStep5"> <em><strong>&lt;第3句 /&gt;</strong></em></p> <hr> <div class="language-js extra-class"><pre class="language-js"><code><span class="token class-name">Foo</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>为Foo的原型对象(prototype)添加属性getName，该属性也是一个引用类型，当前内存图如下：
+<img src="/img/FooStep6.png" alt="方法执行图" title="FooStep6"> <em><strong>&lt;第4句 /&gt;</strong></em></p> <hr> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> <span class="token function-variable function">getName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><em><strong>注意！！！！</strong></em> 这一步是一个赋值操作，因为我们现在处于方法执行阶段，而非变量提升阶段，所以这里一定不能搞混了。当前的内存图为：
+<img src="/img/FooStep7.png" alt="方法执行图" title="FooStep7"></p> <p><em><strong>&lt;第5句 /&gt;</strong></em></p> <hr> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>变量提升阶段已完成，跳过，内存图不变，同上一步。</p> <p><em><strong>&lt;第6句 /&gt;</strong></em></p> <hr> <div class="language-js extra-class"><pre class="language-js"><code>Foo<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>根据方法内存图，很容易可以看到Foo.getName的引用指向的是输出为2的方法，因此该语句输出如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token number">2</span>
+</code></pre></div><p><em><strong>&lt;第7句 /&gt;</strong></em></p> <hr> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>根据方法内存图，很容易可以看到当前全局下的getName变量的引用指向的是输出为4的方法，因此该语句输出如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token number">4</span>
+</code></pre></div><p><em><strong>&lt;第8句 /&gt;</strong></em></p> <hr> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" target="_blank" rel="noopener noreferrer">根据JS的运算符执行优先级<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，先计算Foo()，Foo的方法执行执行栈(ECStack)如下图所示：
+<img src="/img/FooStep8.png" alt="方法执行图" title="FooStep8"></p> <p>此时的内存图为：
+<img src="/img/FooStep9.png" alt="方法执行图" title="FooStep9"></p> <p>根据方法的执行栈可以看出来，Foo()执行返回了this也就是windows对象，接下来计算的就是window.getName(),即全局的getName方法，根据当前的内存图可以看到目前全局的getName的引用指向是输出为1的方法，因此该语句输出如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token number">1</span>
+</code></pre></div><p><em><strong>&lt;第9句 /&gt;</strong></em></p> <hr> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>第八句代码执行分析，我们已知，目前全局的getName的引用指向是输出为1的方法，因为该语句输出如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token number">1</span>
+</code></pre></div><p><em><strong>&lt;第10句 /&gt;</strong></em></p> <hr> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">new</span> <span class="token class-name">Foo<span class="token punctuation">.</span>getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+</code></pre></div><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" target="_blank" rel="noopener noreferrer">根据JS的运算符执行优先级<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，当前优先级最高的是成员访问（… . …）运算符，即先执行Foo.getName，而Foo.getName指向的是输出为2的方法。接下来优先级最高的就是new(带参数列表)(new … ( … ))运算符了，因为上面代码可以理解拆分成下面这两步：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> s <span class="token operator">=</span> Foo<span class="token punctuation">.</span>getName<span class="token punctuation">;</span>
+<span class="token keyword">var</span> r <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">s</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>new一个方法，对于方法内部，相当于把这个方法当成一个普通方法执行了，因此该语句输出如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token number">2</span>
+</code></pre></div><p><em><strong>&lt;第11句 /&gt;</strong></em></p> <hr> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>运算符优先级如下</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token number">1.</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 看成一个整体xxx</span>
+<span class="token number">2.</span> xxx<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>首先new Foo()创建了一个Foo的实例，然后xxx.getName()相当于访问Foo实例的getName(),先从其自身上面找有无getName()方法，发现没有，则去其原型链找，发现原型链上有getName，并且根据我们上面的内存图中可以看出引用指向的是输出为3的方法，因此该语句输出如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token number">3</span>
+</code></pre></div><p>这里有个问题需要注意，上面的第二句代码Foo.getName = function(){ ... }是给Foo这个对象定义的属性方法，并非***Foo实例***的属性方法，这一点一定注意！！
+给Foo实例定义方法我们一般是这么写的：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> <span class="token function-variable function">Foo</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">getName</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><em><strong>&lt;第12句 /&gt;</strong></em></p> <hr> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">new</span> <span class="token class-name">new</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>运算符优先级如下</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token number">1.</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 看成一个整体xxx</span>
+<span class="token number">2.</span> xxx<span class="token punctuation">.</span>getName <span class="token comment">// 看成一个整体zzz</span>
+<span class="token number">3.</span> <span class="token keyword">new</span> <span class="token class-name">zzz</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>由第11句可以看出来new Foo().getName既是挂在***Foo实例***的原型对象上的方法，引用指向了输出为3的方法，new一个方法，对于方法内部，相当于把这个方法当成一个普通方法执行了，因此该语句输出如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token number">3</span>
+</code></pre></div><h1 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h1> <p>看似简单的一道面试题里面埋了多少的坑，考察了多少知识点，有堆栈内存，有面向对象，有运算符的优先级，有原型，有闭包等等，所以真的是面试造火箭，工作拧螺丝，但是这些知识掌握不透彻，螺丝能拧好吗？</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/14/2022, 9:04:49 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/interview/js/关于对象的深浅克隆.html" class="prev">
+        关于对象(数组)的深浅克隆
+      </a></span> <span class="next"><a href="/interview/js/一道关于JS微任务和宏任务的面试题-头条.html">
+        一道关于微任务和宏任务的面试题
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bf842d89.js" defer></script><script src="/assets/js/2.853c7517.js" defer></script><script src="/assets/js/20.7675f687.js" defer></script>
+  </body>
+</html>
